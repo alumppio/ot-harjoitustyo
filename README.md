@@ -2,6 +2,7 @@
 
 ## Ratkaisut
 
+
 Tavallista tekstiä yksi (1) lause. **Lihavoitua tekstiä** ja * *kursivoitua tekstiä* *.	
 
 [gitlog.txt](laskarit/viikko1/gitlog.txt)
