@@ -1,4 +1,4 @@
-### Ohjelmistotekniikka, harjoitustyö, viikko1
+# Ohjelmistotekniikka, harjoitustyö, viikko1
 
 ## Ratkaisut
 
