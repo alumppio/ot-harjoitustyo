@@ -2,7 +2,6 @@
 
 ## Ratkaisut
 
-githubissa tehty muutos
 
 Tavallista tekstiä yksi (1) lause. **Lihavoitua tekstiä** ja * *kursivoitua tekstiä* *.	
 
