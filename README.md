@@ -1,4 +1,4 @@
-### Tämä on readme tiedosto
+### Ohjelmistotekniikka, harjoitustyö, viikko1
 
 Tavallista tekstiä yksi (1) lause. **Lihavoitua tekstiä** ja * *kursivoitua tekstiä* *.	
 
