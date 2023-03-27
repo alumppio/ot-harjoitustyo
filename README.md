@@ -14,7 +14,7 @@ muutos, joka kommitoidaan, mutta ei pushata gitiin
 <br />
 <br />
 <br />
-<br />
+
 
 # Ohjelmistotekniikka, harjoitustyö, viikko2
 
