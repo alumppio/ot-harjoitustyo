@@ -13,6 +13,11 @@ muutos, joka kommitoidaan, mutta ei pushata gitiin
 
 
 
+
+
+
+
+
 # Ohjelmistotekniikka, harjoitustyö, viikko2
 
 ## Ratkaisut
