@@ -6,6 +6,7 @@ Testien lähdekoodit
 
 [kassapaate_test.py](unicafe/src/tests/kassapaate_test.py)
 
+
 [maksukortti_test.py](unicafe/src/tests/maksukortti_test.py)
 
 **Ja epäoleellisempi maksukorttitesti lähdekoodi**
