@@ -20,6 +20,8 @@ muutos, joka kommitoidaan, mutta ei pushata gitiin
 Testien lähdekoodit
 
 [kassapaate_test.py](laskarit/viikko2/unicafe/src/tests/kassapaate_test.py)
+
+
 [maksukortti_test.py](laskarit/viikko2/unicafe/src/tests/maksukortti_test.py)
 
 **Ja epäoleellisempi maksukorttitesti lähdekoodi**
