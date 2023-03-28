@@ -1,3 +1,12 @@
+# Ohjelmistotekniikka, isompi harjoitustyö
+
+[Työaikakirja](dokumentaatio/tyoaikakirja.txt)
+
+
+[Vaatimusmäärittely.md](dokumentaatio/vaatimusmaarittely.md)
+
+
+
 # Ohjelmistotekniikka, harjoitustyö, viikko1
 
 ## Ratkaisut

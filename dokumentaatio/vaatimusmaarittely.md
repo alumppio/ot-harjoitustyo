@@ -12,4 +12,14 @@ Mikäli jatsia haluaa pelata tarvitsee kuitenkin viisi noppaa. Mikäli noppia ei
 
 ## Suunnitellut toiminnallisuudet
 
-Yksi tai useampi pelaaja graafisessa käyttöliittymässä. 
+- Yksi tai useampi pelaaja graafisessa käyttöliittymässä. 
+- Oman joukkueen/itsensä voi nimetä
+- Graaffinen käyttöliittymä on jatsipaperin mukainen.
+- Noppia voi lukita painamalla niitä hiirellä
+- Tuloksen voi lukita haluttuun kohtaan painamalla vastaavaa kohtaa paperilla.
+- Lopputulokset kirjataan tulostaulukkoon, josta näkee kaikkien vanhojen pelien tulokset. 
+
+
+## Jatkokehitysideoita
+
+- Lisätään kerran pelin aikana käytettävissä oleva mahdollinen tilannevinkki, joka laskee todennäköisyyksien mukaan parhaimman peliliikkeen.
