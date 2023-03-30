@@ -8,18 +8,16 @@
       Pelaaja "min 2. max 8." --> Pelilauta
 
     class Pelilauta{
+        Aloitusruutu
         Katu1
         ...
         Katu4
 
     }
 
-    class Aloitusruutu{
-        pelaajat
-        sijainti
-    }
-    
+
     class Mannerheimintie{
+        omistaja
         Ruutu1
         ...
         Ruutu10
@@ -27,15 +25,25 @@
 
 
     class Erottaja{
+        omistaja
         Ruutu11
         ...
         Ruutu20
     }
 
-    class Mannerheimintie{
-        Ruutu20
+    class Arkadiankatu{
+        omistaja
+        Ruutu21
         ...
-        Ruutu10
+        Ruutu30
+    }
+
+
+    class Helsinginkatu{
+        omistaja
+        Ruutu31
+        ...
+        Ruutu40
     }
 
     class Nopat{
