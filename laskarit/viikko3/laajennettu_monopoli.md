@@ -4,7 +4,7 @@
 
   classDiagram
       Pelaaja --> Nopat
-      Nopat "+1-12" --> Pelaaja
+      Nopat "+2..12" --> Pelaaja : pelaaja.ruutu + "2..12"
       Pelaaja "min 2. max 8." --> Pelilauta
 
     class Pelilauta{
