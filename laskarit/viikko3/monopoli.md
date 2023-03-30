@@ -1,6 +1,6 @@
 
 
-'''mermaid 
+```mermaid 
 
   classDiagram
       Pelaaja "1...12" --> Nopat
@@ -13,4 +13,4 @@
           ruutu
       }    
 
-'''
+```
