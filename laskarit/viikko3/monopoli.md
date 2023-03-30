@@ -4,7 +4,7 @@
 
   classDiagram
       Pelaaja --> Nopat
-      Nopat "+1...12" --> Pelaaja.ruutu
+      Nopat "+1...12" --> Pelaaja
 
 
 
