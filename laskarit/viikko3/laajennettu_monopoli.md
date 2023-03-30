@@ -6,6 +6,10 @@
       Pelaaja --> Nopat
       Nopat "+2...12" --> Pelaaja : pelaaja.ruutu + noppa1 + noppa2
       Pelaaja "min 2. max 8." --> Pelilauta
+      Mannerheimintie .. Pelilauta
+      Erottaja .. Pelilauta
+      Arkadiankatu .. Pelilauta
+      Helsinginkatu .. Pelilauta
 
     class Pelilauta{
         Aloitusruutu
