@@ -14,6 +14,11 @@
 
     }
 
+    class Aloitusruutu{
+        pelaajat
+        sijainti
+    }
+    
     class Mannerheimintie{
         Ruutu1
         ...
@@ -44,11 +49,7 @@
           ruutu
           raha
       }    
-    
-    class Aloitusruutu{
-        pelaajat
-        sijainti
-    }
+
 
     class Vankila{
         pelaajat
