@@ -5,11 +5,14 @@
   classDiagram
       Pelaaja --> Nopat
       Nopat "+2...12" --> Pelaaja : pelaaja.ruutu + noppa1 + noppa2
-      Pelaaja "min 2. max 8." --> Pelilauta
+      Pelaaja <--> Pelilauta : min 2. max 8.
       Mannerheimintie .. Pelilauta
       Erottaja .. Pelilauta
       Arkadiankatu .. Pelilauta
       Helsinginkatu .. Pelilauta
+      Vankila .. Pelilauta
+      Sattuma_ja_yhteismaa .. Pelilauta
+      Asemat_ja_laitokset .. Pelilauta
 
     class Pelilauta{
         Aloitusruutu
@@ -68,12 +71,12 @@
         sijainti
     }
 
-    class Sattuma ja yhteismaa{
+    class Sattuma_ja_yhteismaa{
         kortti
         sijainti
     }
 
-    class Asemat ja laitokset{
+    class Asemat_ja_laitokset{
         omistaja
         sijainti
     }
