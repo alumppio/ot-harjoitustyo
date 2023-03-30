@@ -10,9 +10,9 @@
       Erottaja .. Pelilauta
       Arkadiankatu .. Pelilauta
       Helsinginkatu .. Pelilauta
-      Vankila .. Pelilauta
-      Sattuma_ja_yhteismaa .. Pelilauta
-      Asemat_ja_laitokset .. Pelilauta
+      Vankila .. Arkadiankatu
+      Sattuma_ja_yhteismaa .. Helsinginkatu
+      Asemat_ja_laitokset .. Erottaja
 
     class Pelilauta{
         Aloitusruutu
