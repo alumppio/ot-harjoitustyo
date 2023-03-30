@@ -1,10 +1,10 @@
-#Viikko3 tehtävä 1: Monopoli 
+#Viikko3 tehtävä 2: Laajennettu monopoli 
 
 ```mermaid 
 
   classDiagram
       Pelaaja --> Nopat
-      Nopat "+1..12" --> Pelaaja
+      Nopat "+2...12" --> Pelaaja : pelaaja.ruutu + noppa1 + noppa2
       Pelaaja "min 2. max 8." --> Pelilauta
 
     class Pelilauta{
