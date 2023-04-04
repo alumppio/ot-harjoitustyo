@@ -7,3 +7,12 @@ Jatsi on noppapeli, jota voi pelata kahdestaan tai suuremassa ryhmässä. Peliss
 - [Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
 - [Työaikakirjanpito](dokumentaatio/tyoaikakirja.txt)
 - [Changelog](dokumentaatio/changelog.md)
+
+
+# Komentorivitoiminnot 
+
+## Ohjelman suoritus
+Suorita ohjelma komentoriviltä komennolla:
+```bash
+poetry run invoke start
+``
