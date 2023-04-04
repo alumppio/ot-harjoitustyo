@@ -16,6 +16,8 @@ class Dices:
 
 class Player:
     def __init__(self):
+
+        #Idea for this dictionary was taken from chatGPT
         self.minutes = {
             "Ones": None,
             "Twos": None,
