@@ -9,7 +9,7 @@ def test(ctx):
     ctx.run("pytest src", pty=True)
 
 
-#Copied straight from the Todo-app's sourcecode
+#Copied straight from the week3 course material
 @task
 def coverage(ctx):
     ctx.run('coverage run --branch -m pytest src', pty=True)
