@@ -15,4 +15,17 @@ Jatsi on noppapeli, jota voi pelata kahdestaan tai suuremassa ryhmässä. Peliss
 Suorita ohjelma komentoriviltä komennolla:
 ```bash
 poetry run invoke start
-``
+```
+
+## Ohjelman testaus
+
+Ohjelman testit voidaan suorittaa komentoriviltä komennolla:
+```bash
+poetry run invoke test
+```
+
+ja näistä voidaan luoda testikattavuusraportti komentoriviltä komennolla:
+```bash
+poetry run invoke coverage-report
+```
+
