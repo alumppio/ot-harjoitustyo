@@ -41,13 +41,3 @@ class Player:
                     sum += x
 
             self.minutes['Ones'] = sum
-
-
-d = Dices()
-p = Player()
-
-print(d.dice)
-print(p.minutes['Ones'])
-
-p.Set_Ones(d)
-print(p.minutes['Ones'])
