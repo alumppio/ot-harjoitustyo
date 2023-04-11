@@ -29,3 +29,10 @@ ja näistä voidaan luoda testikattavuusraportti komentoriviltä komennolla:
 poetry run invoke coverage-report
 ```
 
+## Pylint 
+
+Ohjelman koodin staattisen laadun voi tarkistaa pylint-testeillä, jotka voidaan suorittaa komentoriviltä komennolla:
+```bash
+poetry run invoke pylint
+```
+
