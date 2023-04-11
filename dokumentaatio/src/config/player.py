@@ -1,4 +1,5 @@
-import dice
+import config.dice as Dices
+
 
 class Player:
     def __init__(self):
@@ -19,7 +20,7 @@ class Player:
             "Yatzy": None,
             "Chance": None}
 
-    def set_upper_part(self, dices: dice.Dices, number: int):
+    def set_upper_part(self, dices: Dices, number: int):
         if self.minutes[number] is None:
             points = 0
 
@@ -31,7 +32,7 @@ class Player:
         else:
             return
 
-    def set_three_of_a_kind(self, dices: dice.Dices):
+    def set_three_of_a_kind(self, dices: Dices):
         if self.minutes["Three of a Kind"] is None:
             number_to_set = max(set(dices.dice), key=dices.dice.count)
 
@@ -39,7 +40,7 @@ class Player:
         else:
             return
 
-    def set_four_of_a_kind(self, dices: dice.Dices):
+    def set_four_of_a_kind(self, dices: Dices):
         if self.minutes["Four of a Kind"] is None:
             number_to_set = max(set(dices.dice), key=dices.dice.count)
 
@@ -47,29 +48,29 @@ class Player:
         else:
             return
 
-    def set_full_house(self, dices: dice.Dices):
+    def set_full_house(self, dices: Dices):
         if self.minutes["Full House"] is None and len(set(dices.dice)) == 2:
             self.minutes["Full House"] = sum(dices.dice)
         else:
             return
 
-    def set_straight(self, dices: dice.Dices):
+    def set_straight(self, dices: Dices):
         if self.minutes["Large Straight"] is None and len(set(
-            dices.dice)) == 5 and sum(dices.dice) == 20:
+                dices.dice)) == 5 and sum(dices.dice) == 20:
             self.minutes["Large Straight"] = sum(dices.dice)
         elif self.minutes["Small Straight"] is None and len(
-            set(dices.dice)) == 5 and sum(dices.dice) == 15:
+                set(dices.dice)) == 5 and sum(dices.dice) == 15:
             self.minutes["Small Straight"] = sum(dices.dice)
         else:
             return
 
-    def set_yatzy(self, dices: dice.Dices):
+    def set_yatzy(self, dices: Dices):
         if self.minutes["Yatzy"] is None and len(set(dices.dice)) == 1:
             self.minutes["Yatzy"] = 50
         else:
             return
 
-    def set_chance(self, dices: dice.Dices):
+    def set_chance(self, dices: Dices):
         if self.minutes["Chance"] is None:
             self.minutes["Chance"] = sum(dices.dice)
         else:

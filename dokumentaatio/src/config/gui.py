@@ -1,5 +1,5 @@
 import pygame
-import dice
+from config.dice import Dices
 
 
 # Constants
@@ -22,15 +22,18 @@ SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 SCREEN.fill(WHITE)
 pygame.display.set_caption("Yatzy")
 DICE_ROLLER = pygame.transform.smoothscale(pygame.image.load
-                                           ("istockphoto-936431366-1024x1024.jpg"), (150, 80))
+("/home/alumppio/ot-harjoitustyo/dokumentaatio/src/resources/istockphoto-936431366-1024x1024.jpg"),
+                                           (150, 80))
 ROLL_TEXT = pygame.transform.smoothscale(
-    pygame.image.load("roll_text_picture.png"), (150, 20))
+    pygame.image.load
+    ("/home/alumppio/ot-harjoitustyo/dokumentaatio/src/resources/roll_text_picture.png"),
+    (150, 20))
 
 
 class DrawDice:
     """Class to draw dices to the plane"""
 
-    def __init__(self, dices: dice.Dices):
+    def __init__(self, dices: Dices):
         self.dices = dices
 
     def dice_side_1(self, dice_number):
@@ -76,7 +79,7 @@ class DrawDice:
     def dice_side_5(self, dice_number):
         """Defining dice side 5"""
         pygame.draw.rect(SCREEN, BLACK, pygame.Rect(DICE_X + DICE_GAP*dice_number
-                                        + DICE_A*dice_number, DICE_Y, DICE_A, DICE_A), 2)
+            + DICE_A*dice_number, DICE_Y, DICE_A, DICE_A), 2)
         pygame.draw.circle(SCREEN, BLACK, (DICE_X + DICE_GAP*dice_number +
                                            DICE_A/2 + dice_number*DICE_A, DICE_Y + DICE_A/2), 5)
         pygame.draw.circle(SCREEN, BLACK, (DICE_X + DICE_GAP*dice_number +
@@ -91,7 +94,7 @@ class DrawDice:
     def dice_side_6(self, dice_number):
         """Defining dice side 6"""
         pygame.draw.rect(SCREEN, BLACK, pygame.Rect(DICE_X +
-            DICE_GAP*dice_number + DICE_A*dice_number, DICE_Y, DICE_A, DICE_A), 2)
+                            DICE_GAP*dice_number + DICE_A*dice_number, DICE_Y, DICE_A, DICE_A), 2)
         pygame.draw.circle(SCREEN, BLACK, (DICE_X + DICE_GAP*dice_number +
                                            DICE_A/4 + dice_number*DICE_A, DICE_Y + 3*DICE_A/4), 5)
         pygame.draw.circle(SCREEN, BLACK, (DICE_X + DICE_GAP*dice_number +
@@ -141,7 +144,7 @@ class DrawDice:
 class EventHandler:
     """Class to handle events in the game """
 
-    def __init__(self, dices: dice.Dices):
+    def __init__(self, dices: Dices):
         self.dices = dices
         self.dices_to_hold = []
         self.dice_drawer = DrawDice(self.dices)
@@ -208,7 +211,7 @@ class EventHandler:
             self.quit(event)
 
 
-d = dice.Dices()
+d = Dices()
 e = EventHandler(d)
 
 pygame.display.flip()

@@ -20,3 +20,7 @@
 1500-1600: Grafiikkaliittymää tehty eteenpäin, lisätty kuva lähde:
 
 (https://media.istockphoto.com/id/936431366/photo/rolling-dices.jpg?s=1024x1024&w=is&k=20&c=Ug4uT66aaNHaUoZSLacXqPXJqd_jfIjlh4rqTcqYLFc=)
+
+## 11.4 
+
+1500-1700: Yritin löytää virhettä, jonka takia en saanut tiedostoja importattua toisiin tiedostoihin (huolimattomuusvirhe:D). 

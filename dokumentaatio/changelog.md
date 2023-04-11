@@ -7,4 +7,6 @@
 
 - game.py-tiedosto tehty loppuu
 - game.py-tiedosto testattu kokonaan
-- 
+- Vinkkien mukaan eroteltu game.py-tiedoston luokat erillisiin tiedostoihin. 
+- Graafinen käyttöliittymä luotu alkuun
+
