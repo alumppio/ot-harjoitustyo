@@ -24,4 +24,5 @@
 ## 11.4 
 
 1500-1700: Yritin löytää virhettä, jonka takia en saanut tiedostoja importattua toisiin tiedostoihin (huolimattomuusvirhe:D). 
+
 2350-: viimeisiä korjauksia ennen palautusta
