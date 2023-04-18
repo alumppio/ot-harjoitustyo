@@ -1,5 +1,6 @@
 import pygame
 from config.dice import Dices
+from config.player import Player
 
 
 # Constants
@@ -7,6 +8,8 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GRAY = (180, 180, 180)
 RED = (200, 0, 0)
+LIGHT_RED = pygame.Color('#f4cccc')
+LIGHT_BLUE = pygame.Color('#c9daf8')
 FPS = 60
 TIMER = pygame.time.Clock()
 DICE_A = 60  # Dice width
@@ -28,6 +31,13 @@ ROLL_TEXT = pygame.transform.smoothscale(
     pygame.image.load
     ("/home/alumppio/ot-harjoitustyo/dokumentaatio/src/resources/roll_text_picture.png"),
     (150, 20))
+
+YATZY_PAPER = pygame.transform.smoothscale(
+    pygame.image.load
+    ("/home/alumppio/ot-harjoitustyo/dokumentaatio/src/resources/yatzy_paper.png"),
+    (580,500)
+)
+font = pygame.font.SysFont('arial', 12)
 
 
 class DrawDice:
@@ -141,14 +151,88 @@ class DrawDice:
         self.draw_dices()
 
 
+class DrawYatzy:
+    def __init__(self):
+        SCREEN.blit(YATZY_PAPER, (5,90))
+        tip_1 = font.render('MOUSE1 TO ROLL OR SELECT DICE', True, GRAY, WHITE)
+        tip_2 = font.render('MOUSE1 TO SET SCORES', True, GRAY, WHITE)
+        tip_3 = font.render('UNDO SELECTION WITH ESCAPE', True, GRAY, WHITE)
+        tips = [tip_1, tip_2, tip_3]
+
+        for i in range(3):
+            SCREEN.blit(tips[i], pygame.Rect(590,150+30*i,20,30))
+
+    def set_upper_part(self, number, dice, player):
+        if player.minutes[number] is None:    
+            player.set_upper_part(dice,number)
+            points = font.render(str(player.minutes[number]),True, BLACK, WHITE)
+            SCREEN.blit(points, pygame.Rect(152,170+(number-1)*25,100,25))
+
+    def set_pair(self, dice, player):
+        if player.minutes["Pair"] is None:
+            player.set_pair(dice)
+            points = font.render(str(player.minutes["Pair"]),True, BLACK, WHITE)
+            SCREEN.blit(points, pygame.Rect(152,345,100,25))
+
+    def set_two_pair(self, dice, player):
+        if player.minutes["Two Pair"] is None:    
+            player.set_two_pair(dice)
+            points = font.render(str(player.minutes["Two Pair"]),True, BLACK, WHITE)
+            SCREEN.blit(points, pygame.Rect(152,369,100,25))
+        
+    def set_3_of_a_kind(self, dice, player):
+        if player.minutes["Three of a Kind"] is None:
+            player.set_3_of_a_kind(dice)
+            points = font.render(str(player.minutes["Three of a Kind"]),True, BLACK, WHITE)
+            SCREEN.blit(points, pygame.Rect(152,393,100,25))
+
+    def set_4_of_a_kind(self, dice, player):
+        if player.minutes["Four of a Kind"] is None:
+            player.set_4_of_a_kind(dice)
+            points = font.render(str(player.minutes["Four of a Kind"]),True, BLACK, WHITE)
+            SCREEN.blit(points, pygame.Rect(152,417,100,25))
+
+    def set_small_straight(self, dice, player):
+        if player.minutes["Small Straight"] is None:
+            player.set_small_straight(dice)
+            points = font.render(str(player.minutes["Small Straight"]),True, BLACK, WHITE)
+            SCREEN.blit(points, pygame.Rect(152,443,100,25))
+
+    def set_large_straight(self, dice, player):
+        if player.minutes["Large Straight"] is None:
+            player.set_large_straight(dice)
+            points = font.render(str(player.minutes["Large Straight"]),True, BLACK, WHITE)
+            SCREEN.blit(points, pygame.Rect(152,467,100,25))
+
+    def set_full_house(self, dice, player):
+        if player.minutes["Full House"] is None:
+            player.set_full_house(dice)
+            points = font.render(str(player.minutes["Full House"]),True, BLACK, WHITE)
+            SCREEN.blit(points, pygame.Rect(152,491,100,25))
+
+    def set_chance(self, dice, player):
+        if player.minutes["Chance"] is None:
+            player.set_chance(dice)
+            points = font.render(str(player.minutes["Chance"]),True, BLACK, WHITE)
+            SCREEN.blit(points, pygame.Rect(152,515,100,25))
+
+    def set_yatzy(self, dice, player):
+        if player.minutes["Yatzy"] is None:    
+            player.set_yatzy(dice)
+            points = font.render(str(player.minutes["Yatzy"]),True, BLACK, WHITE)
+            SCREEN.blit(points, pygame.Rect(152,538,100,25))
+
+
 class EventHandler:
     """Class to handle events in the game """
 
-    def __init__(self, dices: Dices):
+    def __init__(self, dices: Dices, players : list):
         self.dices = dices
         self.dices_to_hold = []
+        self.players = players
         self.dice_drawer = DrawDice(self.dices)
         self.running = True
+        self.yatzy_sheet = DrawYatzy()
 
     def select_dice(self, dice_number):
         """Method to select the dice"""
@@ -192,9 +276,116 @@ class EventHandler:
         if event.type == pygame.MOUSEBUTTONDOWN and 3 <= event.pos[1] <= 113:
             if 548 <= event.pos[0] <= 702:
                 self.dices.roll_dice(self.dices_to_hold)
-                SCREEN.fill(WHITE)
+                pygame.draw.rect(SCREEN,WHITE, pygame.Rect(100,0,600,115))
 
                 self.dice_drawer.draw_all()
+                self.dices_to_hold = []
+
+    def set_upper_part(self, event):
+        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
+            if 169<=event.pos[1]<=192:
+                self.yatzy_sheet.set_upper_part(1, self.dices, self.players)
+                self.next_turn()
+            if 193<=event.pos[1]<=216:
+                self.yatzy_sheet.set_upper_part(2, self.dices, self.players)
+                self.next_turn()
+            if 217<=event.pos[1]<=240:
+                self.yatzy_sheet.set_upper_part(3, self.dices, self.players)
+                self.next_turn()                
+            if 241<=event.pos[1]<=264:
+                self.yatzy_sheet.set_upper_part(4, self.dices, self.players)
+                self.next_turn()
+            if 265<=event.pos[1]<=288:
+                self.yatzy_sheet.set_upper_part(5, self.dices, self.players)
+                self.next_turn()
+            if 289<=event.pos[1]<=312:
+                self.yatzy_sheet.set_upper_part(6, self.dices, self.players)
+                self.next_turn()
+    
+    def set_pair(self, event):
+        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
+            if 342<=event.pos[1]<=365:
+                self.yatzy_sheet.set_pair(self.dices, self.players)
+                self.next_turn()
+
+        
+    def set_two_pair(self, event):
+        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
+            if 366<=event.pos[1]<=389:
+                self.yatzy_sheet.set_two_pair(self.dices, self.players)
+                self.next_turn()
+
+    def set_3_of_a_kind(self, event):
+        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
+            if 390<=event.pos[1]<=413:
+                self.yatzy_sheet.set_3_of_a_kind(self.dices, self.players)
+                self.next_turn()
+
+    def set_4_of_a_kind(self, event):
+        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
+            if 414<=event.pos[1]<=437:
+                self.yatzy_sheet.set_4_of_a_kind(self.dices, self.players)
+                self.next_turn()
+
+    def set_small_straight(self, event):
+        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
+            if 438<=event.pos[1]<=461:
+                self.yatzy_sheet.set_small_straight(self.dices, self.players)
+                self.next_turn()
+
+    def set_large_straight(self, event):
+        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
+            if 462<=event.pos[1]<=485:
+                self.yatzy_sheet.set_large_straight(self.dices, self.players)
+                self.next_turn()
+
+    def set_full_house(self, event):
+        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
+            if 486<=event.pos[1]<=509:
+                self.yatzy_sheet.set_full_house(self.dices, self.players)
+                self.next_turn()
+
+    def set_chance(self, event):
+        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
+            if 510<=event.pos[1]<=533:
+                self.yatzy_sheet.set_chance(self.dices, self.players)
+                self.next_turn()
+
+    def set_yatzy(self, event):
+        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
+            if 534<=event.pos[1]<=557:
+                self.yatzy_sheet.set_yatzy(self.dices, self.players)
+                self.next_turn()
+
+    def set_lower_part(self, event):
+        self.set_pair(event)
+        self.set_two_pair(event)
+        self.set_3_of_a_kind(event)
+        self.set_4_of_a_kind(event)
+        self.set_small_straight(event)
+        self.set_large_straight(event)
+        self.set_full_house(event)
+        self.set_chance(event)
+        self.set_yatzy(event)
+
+    def set_total(self):
+        if self.players.check_total():
+            points = 0 
+            for item in self.players.minutes:
+                if isinstance(self.players.minutes[item], int):
+                    points += self.players.minutes[item]
+            total_points = font.render(str(points),True, BLACK, LIGHT_RED)
+            SCREEN.blit(total_points, pygame.Rect(152,567,100,25))
+        else:
+            return
+
+    def next_turn(self):
+        self.dices.next_turn()
+        pygame.draw.rect(SCREEN,WHITE, pygame.Rect(100,0,600,115))
+        self.dice_drawer.draw_all()
+
+
+
 
     def quit(self, event):
         """Method to quit the game"""
@@ -203,21 +394,18 @@ class EventHandler:
 
     def handle_events(self):
         """Check all occurred events"""
-        for event in pygame.event.get():
-            self.dice_drawer.draw_all()
-            self.hold_dice(event)
-            self.undo_hold_dice(event)
-            self.roll_dice(event)
-            self.quit(event)
+        while self.running:
+            for event in pygame.event.get():
+                TIMER.tick(FPS)
 
-
-d = Dices()
-e = EventHandler(d)
-
-pygame.display.flip()
-
-while e.running:
-    TIMER.tick(FPS)
-
-    e.handle_events()
-    pygame.display.flip()
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    print(event.pos)
+                self.dice_drawer.draw_all()
+                self.hold_dice(event)
+                self.undo_hold_dice(event)
+                self.roll_dice(event)
+                self.quit(event)
+                self.set_upper_part(event)
+                self.set_lower_part(event)
+                self.set_total()
+                pygame.display.flip()

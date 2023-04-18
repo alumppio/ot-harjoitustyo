@@ -15,3 +15,7 @@ class Dices:
             self.roll_amount += 1
         else:
             return
+    
+    def next_turn(self):
+        self.dice = [random.randint(1, 6) for i in range(5)]
+        self.roll_amount = 1

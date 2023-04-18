@@ -26,3 +26,7 @@
 1500-1700: Yritin löytää virhettä, jonka takia en saanut tiedostoja importattua toisiin tiedostoihin (huolimattomuusvirhe:D). 
 
 2350-: viimeisiä korjauksia ennen palautusta
+
+## 17.4 
+
+1800-2100: Tein grafiikkaliittymää eteenpäin, pisteitä voi merkitä jatsipaperiin.
