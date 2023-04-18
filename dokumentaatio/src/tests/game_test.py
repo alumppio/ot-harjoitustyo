@@ -34,9 +34,9 @@ class TestGame(unittest.TestCase):
         for i in range(1, 7):
             self.Player.set_upper_part(self.Dice, i)
             self.assertNotEqual(self.Player.minutes[i], None)
-    
+
     def test_set_pair(self):
-        another_dice = dice.Dices() 
+        another_dice = dice.Dices()
         another_dice.dice = [4, 4, 6, 6, 2]
         self.Player.set_pair(another_dice)
         self.assertEqual(self.Player.minutes["Pair"], 12)

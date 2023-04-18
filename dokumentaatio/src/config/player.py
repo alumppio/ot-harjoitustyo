@@ -31,15 +31,15 @@ class Player:
                     points += dice_number
 
             self.minutes[number] = points
-            
+
             if points == 0:
                 self.minutes[number] = 'x'
         else:
             return
-    
+
     def set_pair(self, dices: Dices):
         if self.minutes["Pair"] is None:
-            pair = set([number for number in dices.dice 
+            pair = set([number for number in dices.dice
                         if dices.dice.count(number) > 1])
             if len(pair) == 0:
                 self.minutes["Pair"] = 'x'
@@ -51,20 +51,21 @@ class Player:
 
     def set_two_pair(self, dices: Dices):
         if self.minutes["Two Pair"] is None:
-            pair = set([number for number in dices.dice 
+            pair = set([number for number in dices.dice
                         if dices.dice.count(number) > 1])
 
             if len(pair) <= 1:
                 self.minutes["Two Pair"] = 'x'
             else:
-                self.minutes["Two Pair"] = sorted(pair, reverse=True)[0]*2 + sorted(pair, reverse=True)[1]*2
+                self.minutes["Two Pair"] = sorted(pair, reverse=True)[
+                    0]*2 + sorted(pair, reverse=True)[1]*2
         else:
             return
-        
+
     def set_3_of_a_kind(self, dices: Dices):
         if self.minutes["Three of a Kind"] is None:
-            number_to_set = [number for number in dices.dice 
-                        if dices.dice.count(number) > 2]
+            number_to_set = [number for number in dices.dice
+                             if dices.dice.count(number) > 2]
 
             if len(number_to_set) == 0:
                 self.minutes["Three of a Kind"] = 'x'
@@ -75,8 +76,8 @@ class Player:
 
     def set_4_of_a_kind(self, dices: Dices):
         if self.minutes["Four of a Kind"] is None:
-            number_to_set = [number for number in dices.dice 
-                        if dices.dice.count(number) > 3]
+            number_to_set = [number for number in dices.dice
+                             if dices.dice.count(number) > 3]
 
             if len(number_to_set) == 0:
                 self.minutes["Four of a Kind"] = 'x'
@@ -120,7 +121,7 @@ class Player:
             self.minutes["Chance"] = 'x'
 
     def check_upper(self):
-        for i in range(1,7):
+        for i in range(1, 7):
             if self.minutes[i] is None:
                 return False
         return True

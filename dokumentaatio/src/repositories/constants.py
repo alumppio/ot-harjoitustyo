@@ -19,10 +19,14 @@ SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 
 DIRNAME = os.path.dirname(__file__)
-DATA_FILE_PATH1 = os.path.join(DIRNAME, "../resources/istockphoto-936431366-1024x1024.jpg")
+DATA_FILE_PATH1 = os.path.join(
+    DIRNAME, "../resources/istockphoto-936431366-1024x1024.jpg")
 DATA_FILE_PATH2 = os.path.join(DIRNAME, "../resources/roll_text_picture.png")
 DATA_FILE_PATH3 = os.path.join(DIRNAME, "../resources/yatzy_paper.png")
 
-DICE_ROLLER = pygame.transform.smoothscale(pygame.image.load(DATA_FILE_PATH1), (150, 80))
-ROLL_TEXT = pygame.transform.smoothscale(pygame.image.load(DATA_FILE_PATH2), (150, 20))
-YATZY_PAPER = pygame.transform.smoothscale(pygame.image.load(DATA_FILE_PATH3), (580,500))
+DICE_ROLLER = pygame.transform.smoothscale(
+    pygame.image.load(DATA_FILE_PATH1), (150, 80))
+ROLL_TEXT = pygame.transform.smoothscale(
+    pygame.image.load(DATA_FILE_PATH2), (150, 20))
+YATZY_PAPER = pygame.transform.smoothscale(
+    pygame.image.load(DATA_FILE_PATH3), (580, 500))

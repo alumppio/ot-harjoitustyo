@@ -1,9 +1,10 @@
 import pygame
 from config.dice import Dices
-from config.player import Player
-from repositories.constants import *
 from config.visual.draw_dice import DrawDice
 from config.visual.draw_yatzy import DrawYatzy
+from repositories.constants import DICE_Y, DICE_X, DICE_A, DICE_GAP, BLACK, WHITE
+from repositories.constants import SCREEN_WIDTH, SCREEN_HEIGHT, LIGHT_RED, FPS, TIMER
+
 
 pygame.init()
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -15,7 +16,7 @@ font = pygame.font.SysFont('arial', 12)
 class EventHandler:
     """Class to handle events in the game """
 
-    def __init__(self, dices: Dices, players : list):
+    def __init__(self, dices: Dices, players: list):
         self.dices = dices
         self.dices_to_hold = []
         self.players = players
@@ -63,77 +64,77 @@ class EventHandler:
                 self.dices_to_hold = []
 
     def set_upper_part(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
-            if 169<=event.pos[1]<=192:
+        if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
+            if 169 <= event.pos[1] <= 192:
                 self.yatzy_sheet.set_upper_part(1, self.dices, self.players)
                 self.next_turn()
-            if 193<=event.pos[1]<=216:
+            if 193 <= event.pos[1] <= 216:
                 self.yatzy_sheet.set_upper_part(2, self.dices, self.players)
                 self.next_turn()
-            if 217<=event.pos[1]<=240:
+            if 217 <= event.pos[1] <= 240:
                 self.yatzy_sheet.set_upper_part(3, self.dices, self.players)
-                self.next_turn()                
-            if 241<=event.pos[1]<=264:
+                self.next_turn()
+            if 241 <= event.pos[1] <= 264:
                 self.yatzy_sheet.set_upper_part(4, self.dices, self.players)
                 self.next_turn()
-            if 265<=event.pos[1]<=288:
+            if 265 <= event.pos[1] <= 288:
                 self.yatzy_sheet.set_upper_part(5, self.dices, self.players)
                 self.next_turn()
-            if 289<=event.pos[1]<=312:
+            if 289 <= event.pos[1] <= 312:
                 self.yatzy_sheet.set_upper_part(6, self.dices, self.players)
                 self.next_turn()
-    
+
     def set_pair(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
-            if 342<=event.pos[1]<=365:
+        if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
+            if 342 <= event.pos[1] <= 365:
                 if self.yatzy_sheet.set_pair(self.dices, self.players):
                     self.next_turn()
-        
+
     def set_two_pair(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
-            if 366<=event.pos[1]<=389:
+        if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
+            if 366 <= event.pos[1] <= 389:
                 if self.yatzy_sheet.set_two_pair(self.dices, self.players):
-                    self.next_turn()    
+                    self.next_turn()
 
     def set_3_of_a_kind(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
-            if 390<=event.pos[1]<=413:
+        if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
+            if 390 <= event.pos[1] <= 413:
                 if self.yatzy_sheet.set_3_of_a_kind(self.dices, self.players):
                     self.next_turn()
 
     def set_4_of_a_kind(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
-            if 414<=event.pos[1]<=437:
+        if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
+            if 414 <= event.pos[1] <= 437:
                 if self.yatzy_sheet.set_4_of_a_kind(self.dices, self.players):
                     self.next_turn()
 
     def set_small_straight(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
-            if 438<=event.pos[1]<=461:
+        if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
+            if 438 <= event.pos[1] <= 461:
                 if self.yatzy_sheet.set_small_straight(self.dices, self.players):
                     self.next_turn()
 
     def set_large_straight(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
-            if 462<=event.pos[1]<=485:
+        if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
+            if 462 <= event.pos[1] <= 485:
                 if self.yatzy_sheet.set_large_straight(self.dices, self.players):
                     self.next_turn()
 
     def set_full_house(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
-            if 486<=event.pos[1]<=509:
+        if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
+            if 486 <= event.pos[1] <= 509:
                 if self.yatzy_sheet.set_full_house(self.dices, self.players):
                     self.next_turn()
 
     def set_chance(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
-            if 510<=event.pos[1]<=533:
+        if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
+            if 510 <= event.pos[1] <= 533:
                 if self.yatzy_sheet.set_chance(self.dices, self.players):
                     self.next_turn()
 
     def set_yatzy(self, event):
-        if event.type == pygame.MOUSEBUTTONDOWN and 122<=event.pos[0]<=199:
-            if 534<=event.pos[1]<=557:
+        if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
+            if 534 <= event.pos[1] <= 557:
                 if self.yatzy_sheet.set_yatzy(self.dices, self.players):
                     self.next_turn()
 
@@ -150,12 +151,12 @@ class EventHandler:
 
     def set_total(self):
         if self.players.check_total():
-            points = 0 
+            points = 0
             for item in self.players.minutes:
                 if isinstance(self.players.minutes[item], int):
                     points += self.players.minutes[item]
-            total_points = font.render(str(points),True, BLACK, LIGHT_RED)
-            SCREEN.blit(total_points, pygame.Rect(152,567,100,25))
+            total_points = font.render(str(points), True, BLACK, LIGHT_RED)
+            SCREEN.blit(total_points, pygame.Rect(152, 567, 100, 25))
         else:
             return
 
