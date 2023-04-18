@@ -30,3 +30,9 @@
 ## 17.4 
 
 1800-2100: Tein grafiikkaliittymää eteenpäin, pisteitä voi merkitä jatsipaperiin.
+
+## 18.4
+
+1130-1530: Erottelin grafiikkaliittymän omiin luokkiinsa (aiemmin 3 luokkaa samassa tiedostossa). Pelin pystyy nyt pelamaan loppuun, vaikka peli ei itsessään lopu.
+
+2300-2350: Tein viimeisiä muutoksia ennen deadlineä.

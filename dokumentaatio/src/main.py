@@ -2,7 +2,6 @@ from config.player import Player
 from config.dice import Dices
 from config.gui import EventHandler
 
-
 def main():
     dices = Dices()
     player = Player()

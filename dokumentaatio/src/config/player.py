@@ -54,11 +54,10 @@ class Player:
             pair = set([number for number in dices.dice 
                         if dices.dice.count(number) > 1])
 
-            if len(pair) >= 1:
+            if len(pair) <= 1:
                 self.minutes["Two Pair"] = 'x'
             else:
-                self.minutes["Two Pair"] = sorted(pair, reverse=True)[0]*2
-                + sorted(pair, reverse=True)[1]*2
+                self.minutes["Two Pair"] = sorted(pair, reverse=True)[0]*2 + sorted(pair, reverse=True)[1]*2
         else:
             return
         

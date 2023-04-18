@@ -34,21 +34,33 @@ class TestGame(unittest.TestCase):
         for i in range(1, 7):
             self.Player.set_upper_part(self.Dice, i)
             self.assertNotEqual(self.Player.minutes[i], None)
+    
+    def test_set_pair(self):
+        another_dice = dice.Dices() 
+        another_dice.dice = [4, 4, 6, 6, 2]
+        self.Player.set_pair(another_dice)
+        self.assertEqual(self.Player.minutes["Pair"], 12)
 
-    def test_set_three_of_a_kind(self):
+    def test_set_two_pair(self):
+        another_dice = dice.Dices()
+        another_dice.dice = [5, 5, 6, 6, 2]
+        self.Player.set_two_pair(another_dice)
+        self.assertEqual(self.Player.minutes["Two Pair"], 22)
+
+    def test_set_3_of_a_kind(self):
         another_dice = dice.Dices()
         another_dice.dice = [1, 1, 1, 2, 3]
 
-        self.Player.set_three_of_a_kind(another_dice)
-        self.Player.set_three_of_a_kind(another_dice)
+        self.Player.set_3_of_a_kind(another_dice)
+        self.Player.set_3_of_a_kind(another_dice)
         self.assertNotEqual(self.Player.minutes["Three of a Kind"], None)
 
-    def test_set_four_of_a_kind(self):
+    def test_set_4_of_a_kind(self):
         another_dice = dice.Dices()
         another_dice.dice = [4, 4, 4, 4, 2]
 
-        self.Player.set_four_of_a_kind(another_dice)
-        self.Player.set_four_of_a_kind(another_dice)
+        self.Player.set_4_of_a_kind(another_dice)
+        self.Player.set_4_of_a_kind(another_dice)
         self.assertNotEqual(self.Player.minutes["Four of a Kind"], None)
 
     def test_set_full_house(self):
@@ -63,16 +75,16 @@ class TestGame(unittest.TestCase):
         another_dice = dice.Dices()
         another_dice.dice = [1, 2, 3, 4, 5]
 
-        self.Player.set_straight(another_dice)
-        self.Player.set_straight(another_dice)
+        self.Player.set_small_straight(another_dice)
+        self.Player.set_small_straight(another_dice)
         self.assertNotEqual(self.Player.minutes["Small Straight"], None)
 
     def test_set_large_straight(self):
         another_dice = dice.Dices()
         another_dice.dice = [2, 3, 4, 5, 6]
 
-        self.Player.set_straight(another_dice)
-        self.Player.set_straight(another_dice)
+        self.Player.set_large_straight(another_dice)
+        self.Player.set_large_straight(another_dice)
         self.assertNotEqual(self.Player.minutes["Large Straight"], None)
 
     def test_set_yatzy(self):
