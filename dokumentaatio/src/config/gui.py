@@ -174,9 +174,6 @@ class EventHandler:
         while self.running:
             for event in pygame.event.get():
                 TIMER.tick(FPS)
-
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    print(event.pos)
                 self.dice_drawer.draw_all()
                 self.hold_dice(event)
                 self.undo_hold_dice(event)
