@@ -2,7 +2,7 @@
 
 
 ## Rakenne
-Ohjelma koostuu useammasta tiedostosta ja pääpelilooppi suoritetaan tiedostossa main_loop.py. Itse pelikäynnistetään main.py tiedostolla. 
+Ohjelma koostuu useammasta tiedostosta ja pääpelilooppi suoritetaan tiedostossa main_loop.py. Itse pelikäynnistetään main.py tiedostolla. Kansiossa repositories on tiedosto
 
 ```mermaid
     classDiagram
@@ -27,6 +27,13 @@ Ohjelma koostuu useammasta tiedostosta ja pääpelilooppi suoritetaan tiedostoss
             draw_yatzy.py
         }
 
+        class repositories{
+            contants.py
+        }
+
+        class resources{
+            peliin liittyviä kuvia...
+        }
 ```
 
 ## Sovelluslogiikka
