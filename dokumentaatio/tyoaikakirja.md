@@ -36,3 +36,14 @@
 1130-1530: Erottelin grafiikkaliittymän omiin luokkiinsa (aiemmin 3 luokkaa samassa tiedostossa). Pelin pystyy nyt pelamaan loppuun, vaikka peli ei itsessään lopu.
 
 2300-2350: Tein viimeisiä muutoksia ennen deadlineä.
+
+
+## 25.4
+Kipeänä pitkään projetkin edistäminen ollut vaikeaa.
+
+1700-2100: Kirjoitin arkkitehtuurikuvausta alkuun, jäänyt tekemättä edellisellä viikolla. Tein myös 4 viikon palautuksen palauttessa ehdotettuja muutoksia. 
+
+2130-0000: Tein testejä kattavammaksi ja arkkitehtuurikuvausta eteenpäin
+
+
+

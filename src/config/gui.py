@@ -3,9 +3,7 @@ from config.dice import Dices
 from config.visual.draw_dice import DrawDice
 from config.visual.draw_yatzy import DrawYatzy
 from config.pygame_initial import SCREEN, font
-from repositories.constants import DICE_Y, DICE_X, DICE_A, DICE_GAP, BLACK
-from repositories.constants import LIGHT_RED, FPS, TIMER
-
+from repositories.constants import DICE_Y, DICE_X, DICE_A, DICE_GAP, BLACK, LIGHT_RED
 
 
 class EventHandler:

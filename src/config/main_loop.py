@@ -8,8 +8,8 @@ class MainLoop:
         self.event_handler = EventHandler(dices, players)
 
     def handle_events(self):
-        #Check all occurred events
-        #Main gameloop
+        # Check all occurred events
+        # Main gameloop
 
         while self.event_handler.running:
             for event in pygame.event.get():

@@ -45,7 +45,7 @@ class DrawYatzy:
                 str(player.minutes["Two Pair"]), True, BLACK, WHITE)
             self.surface.blit(points, pygame.Rect(152, 369, 100, 25))
             return True
-        
+
         return False
 
     def set_3_of_a_kind(self, dice, player):

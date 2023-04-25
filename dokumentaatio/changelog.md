@@ -12,3 +12,8 @@
 - Graafinen käyttöliittymä tehty milkein loppuun
 - Graafisen käyttöliittymän testaus aloitettu 
 - Pylint otettu käyttöön
+
+## Viikko5
+(Kipeänä pitkään edistynyt vähän)
+
+- Suurin osa toiminnoista on nyt eroteltu eri tiedostoihin

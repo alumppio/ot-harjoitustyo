@@ -39,8 +39,8 @@ class Player:
 
     def set_pair(self, dices: Dices):
         if self.minutes["Pair"] is None:
-            pair = set([number for number in dices.dice
-                        if dices.dice.count(number) > 1])
+            pair = {number for number in dices.dice
+                        if dices.dice.count(number) > 1}
             if len(pair) == 0:
                 self.minutes["Pair"] = 'x'
             else:
@@ -51,8 +51,8 @@ class Player:
 
     def set_two_pair(self, dices: Dices):
         if self.minutes["Two Pair"] is None:
-            pair = set([number for number in dices.dice
-                        if dices.dice.count(number) > 1])
+            pair = {number for number in dices.dice
+                        if dices.dice.count(number) > 1}
 
             if len(pair) <= 1:
                 self.minutes["Two Pair"] = 'x'
@@ -127,7 +127,8 @@ class Player:
         return True
 
     def check_total(self):
-        for item in self.minutes:
-            if self.minutes[item] is None:
+        for points in self.minutes.items():
+            if points[1] is None:
                 return False
         return True
+    

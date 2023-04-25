@@ -8,6 +8,7 @@ def main():
     Start()
     dices = Dices()
     player = Player()
+
     game = MainLoop(dices, player)
     game.handle_events()
 

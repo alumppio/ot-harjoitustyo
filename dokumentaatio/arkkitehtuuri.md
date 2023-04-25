@@ -55,3 +55,19 @@ Kansiossa **visual** on pelin ruudun piirtämiseen liittyvät tiedostot
 Kansion tiedosto draw_dice.py piirtää jatsipelin nopat ja käyttää noppien luomiseen config-kansion tiedoston dice.py Dices luokkaa. Tiedosto käyttää myös repositories-kansion constant.py tiedostoa, joka sisältää peliin liittyviä vakioita. 
 
 Tiedosto draw_yatzy.py pirtää pelin jatsipaperin ja piirtää paperiin pisteet. draw_yatzy.py käyttää repositories-kansion constants.py tiedoston vakioita.
+
+
+
+## Toiminta
+
+Kun ohjelma main.py suoritetaan, tapahtuu seuraava:
+
+```mermaid
+sequenceDiagram
+    main()-->Start() : Alustaa pygamen
+    main()-->dices : Dices()
+    main()-->player : Player()
+    main()-->game : MainLoop(dices, player)
+    game-->game : game.handle.events()
+
+```
