@@ -2,15 +2,10 @@ import pygame
 from config.dice import Dices
 from config.visual.draw_dice import DrawDice
 from config.visual.draw_yatzy import DrawYatzy
-from repositories.constants import DICE_Y, DICE_X, DICE_A, DICE_GAP, BLACK, WHITE
-from repositories.constants import SCREEN_WIDTH, SCREEN_HEIGHT, LIGHT_RED, FPS, TIMER
+from config.pygame_initial import SCREEN, font
+from repositories.constants import DICE_Y, DICE_X, DICE_A, DICE_GAP, BLACK
+from repositories.constants import LIGHT_RED, FPS, TIMER
 
-
-pygame.init()
-SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-SCREEN.fill(WHITE)
-pygame.display.set_caption("Yatzy")
-font = pygame.font.SysFont('arial', 12)
 
 
 class EventHandler:
@@ -169,18 +164,3 @@ class EventHandler:
         """Method to quit the game"""
         if event.type == pygame.QUIT:
             self.running = False
-
-    def handle_events(self):
-        """Check all occurred events"""
-        while self.running:
-            for event in pygame.event.get():
-                TIMER.tick(FPS)
-                self.dice_drawer.draw_all()
-                self.hold_dice(event)
-                self.undo_hold_dice(event)
-                self.roll_dice(event)
-                self.quit(event)
-                self.set_upper_part(event)
-                self.set_lower_part(event)
-                self.set_total()
-                pygame.display.flip()
