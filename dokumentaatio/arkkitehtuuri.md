@@ -6,7 +6,7 @@ Ohjelma koostuu useammasta tiedostosta ja pääpelilooppi suoritetaan tiedostoss
 
 ```mermaid
     classDiagram
-        main.py .. config
+        main .. config
         config .. visual
 
         class config{
