@@ -71,3 +71,7 @@ sequenceDiagram
     game-->game : game.handle.events()
 
 ```
+
+## Heikkoudet
+
+Hetkellä peliä ei voi lopettaa mitenkään muuten kuin sulkemalla tiedoston. Toinen suuri heikkous pelissä on vahinkoklikkausta huomiotta jättäminen. Nyt jos pelissä painaa vahingossa ohi oikeasta kohdasta menettää noppansa. Tällöin pahimmassa tapauksessa ruksata yli kohdan, vaikka olisi mahdollista saada johonkin toiseen kohtaan tulos.
