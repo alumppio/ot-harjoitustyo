@@ -7,10 +7,10 @@ Ohjelma koostuu useammasta tiedostosta ja pääpelilooppi suoritetaan tiedostoss
 ```mermaid
     classDiagram
         main .. config
-        repositories "Vakioita" .. config
-        repositories "Vakioita" .. visual
-        resources "Pelissä käytettäviä kuvia" .. config
-        resources "Pelissä käytettäviä kuvia" .. visual
+        repositories .. config : Vakioita
+        repositories .. visual : Vakioita
+        resources .. config : Pelissä käytettäviä kuvia
+        resources .. visual : Pelissä käytettäviä kuvia
         config .. visual
 
         class config{
