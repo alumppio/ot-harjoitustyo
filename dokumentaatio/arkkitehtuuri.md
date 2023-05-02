@@ -79,7 +79,7 @@ sequenceDiagram
     main()-->game : MainLoop(dices, player)
     game-->event_handler : EventHandler(dices, player)
     game-->event_handler : handle.events()
-    contants-->event_handler : Tarvittavia vakioita
+    constants-->event_handler : Tarvittavia vakioita
     loop while event_handler.running
         event_handler-->event_handler : pygame.timer.tick(FPS)
         event_handler-->event_handler : dice_drawer.draw_all()
