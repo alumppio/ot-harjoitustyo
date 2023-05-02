@@ -37,6 +37,6 @@ poetry run invoke coverage-report
 
 Ohjelman koodin staattisen laadun voi tarkistaa pylint-testeillä, jotka voidaan suorittaa komentoriviltä komennolla:
 ```bash
-poetry run invoke pylint
+poetry run invoke lint
 ```
 
