@@ -68,12 +68,17 @@ sequenceDiagram
     main()-->player : Player()
     main()-->setup : Setup()
     player-->setup : game_setup(player)
-    loop while setup_running
+    loop while setup.running
     	setup-->setup : game_setup_loop(player)
+    end
     setup-->player : player.minutes['Name'] = UserInput
     
+    player-->main() :  
+    dices-->main() : 
     main()-->game : MainLoop(dices, player)
-    game-->game : game.handle.events()
+    loop game.handle.events()
+        game-->game : event_handler.dice_drawer
+    end
 
 ```
 
