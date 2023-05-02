@@ -68,7 +68,7 @@ sequenceDiagram
     main()-->player : Player()
     main()-->setup : Setup()
     player-->setup : game_setup(player)
-    loop while setup.running
+    loop while setup_running
     	setup-->setup : game_setup_loop(player)
     setup-->player : player.minutes['Name'] = UserInput
     
