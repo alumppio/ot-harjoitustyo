@@ -175,6 +175,6 @@ class Player:
         total_points = 0
         for item in self.minutes.items():
             if isinstance(item[1], int) and not isinstance(item[0], int):
-                total_points += item[0]
+                total_points += item[1]
         total_points += self.upper_total_points()
         return total_points
