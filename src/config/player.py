@@ -6,6 +6,7 @@ class Player:
 
         # Idea for this dictionary was taken from chatGPT
         self.minutes = {
+            'Name': None,
             1: None,
             2: None,
             3: None,
@@ -40,7 +41,7 @@ class Player:
     def set_pair(self, dices: Dices):
         if self.minutes["Pair"] is None:
             pair = {number for number in dices.dice
-                        if dices.dice.count(number) > 1}
+                    if dices.dice.count(number) > 1}
             if len(pair) == 0:
                 self.minutes["Pair"] = 'x'
             else:
@@ -52,7 +53,7 @@ class Player:
     def set_two_pair(self, dices: Dices):
         if self.minutes["Two Pair"] is None:
             pair = {number for number in dices.dice
-                        if dices.dice.count(number) > 1}
+                    if dices.dice.count(number) > 1}
 
             if len(pair) <= 1:
                 self.minutes["Two Pair"] = 'x'
@@ -131,4 +132,21 @@ class Player:
             if points[1] is None:
                 return False
         return True
-    
+
+    def upper_total_points(self):
+        points = 0
+        for i in range(1, 7):
+            if isinstance(self.minutes[i], int):
+                points += self.minutes[i]
+        if points >= 52:
+            return points
+        else:
+            return 0
+
+    def total_points(self):
+        total_points = 0
+        for item in self.minutes:
+            if isinstance(self.minutes[item], int) and isinstance(item, int) == False:
+                total_points += self.minutes[item]
+        total_points += self.upper_total_points()
+        return total_points

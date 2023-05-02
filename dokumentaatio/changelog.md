@@ -17,3 +17,8 @@
 (Kipeänä pitkään edistynyt vähän)
 
 - Suurin osa toiminnoista on nyt eroteltu eri tiedostoihin
+
+## Viikko6
+
+- Pelissä voi nyt päättää oman nimensä
+- Lopulliset pisteet näkyvät oikein

@@ -1,4 +1,4 @@
-# Käytetyt tunnit yhteensä: noin 26 tuntia
+# Käytetyt tunnit yhteensä: noin 29 tuntia
 
 ## 28.3: 
 20-30min, tein alustavan vaatimusmäärittelyn ja mietin projektin aihetta
@@ -46,5 +46,15 @@ Kipeänä pitkään projetkin edistäminen ollut vaikeaa.
 1700-2100: Kirjoitin arkkitehtuurikuvausta alkuun, jäänyt tekemättä edellisellä viikolla. Tein myös 4 viikon palautuksen palauttessa ehdotettuja muutoksia. 
 
 2130-0000: Tein testejä kattavammaksi ja arkkitehtuurikuvausta eteenpäin
+
+
+## 29.4
+
+1000-1100: Aloitin tekemään peliä edeltävän aloitusruudun, jossa voi päättää pelaajan nimen.
+
+## 5.2 
+
+0900-1000: Tein labtoolissa ehdotettuja korjauksia.
+1800-1900: Tein loppuun aloitusruudun, jossa pelaaja voi päättää nimensä. Nimi lukee jatsipelipaperissa. Lopulliset pisteet näkyvät nyt myös oikein. 
 
 

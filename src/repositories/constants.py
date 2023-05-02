@@ -1,6 +1,7 @@
 import os
 import pygame
 
+pygame.init()
 # Constants
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -17,6 +18,14 @@ DICE_GAP = 10
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
+
+
+SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+FONT = pygame.font.SysFont('arial', 12)
+START_FONT = pygame.font.SysFont('arial', 30)
+
+START_TEXT = START_FONT.render(
+            'Choose your name (Max 8 char.):', True, BLACK, WHITE)
 
 DIRNAME = os.path.dirname(__file__)
 DATA_FILE_PATH1 = os.path.join(

@@ -2,9 +2,7 @@ import pygame
 from config.dice import Dices
 from config.visual.draw_dice import DrawDice
 from config.visual.draw_yatzy import DrawYatzy
-from config.pygame_initial import SCREEN, font
-from repositories.constants import DICE_Y, DICE_X, DICE_A, DICE_GAP, BLACK, LIGHT_RED
-
+from repositories.constants import DICE_Y, DICE_X, DICE_A, DICE_GAP, SCREEN, FONT
 
 class EventHandler:
     """Class to handle events in the game """
@@ -15,7 +13,8 @@ class EventHandler:
         self.players = players
         self.dice_drawer = DrawDice(self.dices, SCREEN)
         self.running = True
-        self.yatzy_sheet = DrawYatzy(SCREEN, font)
+        self.yatzy_sheet = DrawYatzy(SCREEN, FONT)
+        self.yatzy_sheet.draw_name(players, 1)
 
     def select_dice(self, dice_number):
         """Method to select the dice"""
@@ -144,14 +143,10 @@ class EventHandler:
 
     def set_total(self):
         if self.players.check_total():
-            points = 0
-            for item in self.players.minutes:
-                if isinstance(self.players.minutes[item], int):
-                    points += self.players.minutes[item]
-            total_points = font.render(str(points), True, BLACK, LIGHT_RED)
-            SCREEN.blit(total_points, pygame.Rect(152, 567, 100, 25))
-        else:
-            return
+            self.yatzy_sheet.draw_total_points(self.players)
+
+        if self.players.check_upper():
+            self.yatzy_sheet.draw_upper_points(self.players)
 
     def next_turn(self):
         self.dices.next_turn()

@@ -8,6 +8,7 @@ class TestGUI(unittest.TestCase):
     def setUp(self):
         self.dice = dice.Dices()
         self.player = player.Player()
+        self.player.minutes['Name'] = 'testuser'
         self.game = main.MainLoop(self.dice, self.player)
 
     def test_game_loop(self):

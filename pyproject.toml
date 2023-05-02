@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "dokumentaatio"
+name = "jatsipeli"
 version = "0.1.0"
 description = ""
 authors = ["Antti_Lumppio <antti.lumppio@helsinki.fi>"]
