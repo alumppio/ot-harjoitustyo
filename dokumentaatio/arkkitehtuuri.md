@@ -76,8 +76,17 @@ sequenceDiagram
     player-->main() :  
     dices-->main() : 
     main()-->game : MainLoop(dices, player)
+    game-->event_handler : EventHandler(dices, player)
+    game-->event_handler : handle.events()
     loop game.handle.events()
-        game-->game : event_handler.dice_drawer
+        event_handler-->event_handler : dice_drawer.draw_all()
+        event_handler-->event_handler : hold_dice(event)
+        event_handler-->event_handler : undo_hold_dice(event)
+        event_handler-->event_handler : roll_dice(event)
+        event_handler-->event_handler : quit(event)
+        event_handler-->event_handler : set_upper_part(event)
+        event_handler-->event_handler : set_lower_part(event)
+        event_handler-->event_handler : set_total()
     end
 
 ```
