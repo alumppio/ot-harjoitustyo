@@ -140,13 +140,12 @@ class Player:
                 points += self.minutes[i]
         if points >= 52:
             return points
-        else:
-            return 0
+        return 0
 
     def total_points(self):
         total_points = 0
-        for item in self.minutes:
-            if isinstance(self.minutes[item], int) and isinstance(item, int) == False:
-                total_points += self.minutes[item]
+        for item in self.minutes.items():
+            if isinstance(item[1], int) and not isinstance(item[0], int):
+                total_points += item[0]
         total_points += self.upper_total_points()
         return total_points

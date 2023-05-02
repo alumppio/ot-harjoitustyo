@@ -9,26 +9,23 @@ class Setup:
         SCREEN.blit(START_TEXT, pygame.Rect(40, 300, 20, 30))
 
     def game_setup_loop(self, player):
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_BACKSPACE and 0 < len(self.name):
+                    self.name = self.name[:-1]
+                elif event.key == pygame.K_RETURN:
+                    player.minutes['Name'] = self.name
+                    self.running = False
+                elif 0 <= len(self.name) < 8:
+                    self.name += event.unicode.upper()
+            elif event.type == pygame.QUIT:
+                pygame.quit()
+        name = START_FONT.render(self.name, True, RED, WHITE)
+        self.draw_game_setup(name)
+
+    def game_setup(self, player):
         while self.running:
-            for event in pygame.event.get():
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_BACKSPACE and 0 < len(self.name):
-                        self.name = self.name[:-1]
-                    elif event.key == pygame.K_RETURN:
-                        player.minutes['Name'] = self.name
-                        self.running = False
-                    elif 0 <= len(self.name) < 8:
-                        self.name += event.unicode.upper()
-                elif event.type == pygame.QUIT:
-                    exit()
-            name = START_FONT.render(self.name, True, RED, WHITE)
-            self.draw_game_setup(name)
-        SCREEN.fill(WHITE)
-
-    def game_setup(self, list):
-        for players in list:
-            self.game_setup_loop(players)
-
+            self.game_setup_loop(player)
         SCREEN.fill(WHITE)
 
     def draw_game_setup(self, name):

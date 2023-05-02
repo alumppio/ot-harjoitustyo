@@ -4,6 +4,7 @@ from config.visual.draw_dice import DrawDice
 from config.visual.draw_yatzy import DrawYatzy
 from repositories.constants import DICE_Y, DICE_X, DICE_A, DICE_GAP, SCREEN, FONT
 
+
 class EventHandler:
     """Class to handle events in the game """
 

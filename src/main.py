@@ -10,7 +10,7 @@ def main():
     setup = Setup()
 
     # Soon adding the option for multiple players
-    setup.game_setup([player])
+    setup.game_setup(player)
     game = MainLoop(dices, player)
     game.handle_events()
 

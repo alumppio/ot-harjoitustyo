@@ -25,7 +25,7 @@ FONT = pygame.font.SysFont('arial', 12)
 START_FONT = pygame.font.SysFont('arial', 30)
 
 START_TEXT = START_FONT.render(
-            'Choose your name (Max 8 char.):', True, BLACK, WHITE)
+    'Choose your name (Max 8 char.):', True, BLACK, WHITE)
 
 DIRNAME = os.path.dirname(__file__)
 DATA_FILE_PATH1 = os.path.join(
