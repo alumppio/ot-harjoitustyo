@@ -67,6 +67,7 @@ sequenceDiagram
     main()-->dices : Dices()
     main()-->player : Player()
     main()-->setup : Setup()
+    constants-->setup : Tarvittavia vakioita ja pygame.init()
     player-->setup : game_setup(player)
     loop while setup.running
     	setup-->setup : game_setup_loop(player)
@@ -78,7 +79,9 @@ sequenceDiagram
     main()-->game : MainLoop(dices, player)
     game-->event_handler : EventHandler(dices, player)
     game-->event_handler : handle.events()
-    loop game.handle.events()
+    contants-->event_handler : Tarvittavia vakioita
+    loop while event_handler.running
+        event_handler-->event_handler : pygame.timer.tick(FPS)
         event_handler-->event_handler : dice_drawer.draw_all()
         event_handler-->event_handler : hold_dice(event)
         event_handler-->event_handler : undo_hold_dice(event)
@@ -87,6 +90,7 @@ sequenceDiagram
         event_handler-->event_handler : set_upper_part(event)
         event_handler-->event_handler : set_lower_part(event)
         event_handler-->event_handler : set_total()
+        event_handler-->event_handler : pygame.display.flip()
     end
 
 ```
