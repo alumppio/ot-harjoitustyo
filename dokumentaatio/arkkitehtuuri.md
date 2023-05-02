@@ -60,13 +60,18 @@ Tiedosto draw_yatzy.py pirtää pelin jatsipaperin ja piirtää paperiin pisteet
 
 ## Toiminta
 
-Kun ohjelma main.py suoritetaan, tapahtuu seuraava:
+Kun ohjelma main.py suoritetaan, niin sekvenssikaavion mukaan peli alustetaan ja päästään pelin "ikuiseen" MainLoop-luokan luuppiin, sillä pelin voin tällä hetkellä lopettaa vain manuaalisesti klikkaamalla raksia.
 
 ```mermaid
 sequenceDiagram
-    main()-->Start() : Alustaa pygamen
     main()-->dices : Dices()
     main()-->player : Player()
+    main()-->setup : Setup()
+    player-->setup : game_setup(player)
+    loop while setup.running:
+    	setup-->setup : game_setup_loop(player)
+    setup-->player : player.minutes['Name'] = UserInput
+    
     main()-->game : MainLoop(dices, player)
     game-->game : game.handle.events()
 
