@@ -4,7 +4,9 @@ import config.dice as Dices
 class Player:
     def __init__(self):
 
-        # Idea for this dictionary was taken from chatGPT
+        '''Idea for this dictionary was taken from chatGPT. This dictionary
+        represents the yatzy sheet that contains all the information about the
+        points'''
         self.minutes = {
             'Name': None,
             1: None,
@@ -24,6 +26,8 @@ class Player:
             "Yatzy": None}
 
     def set_upper_part(self, dices: Dices, number: int):
+        '''Method that sets the upper part meaning the values of keys 
+        1 to 6 in the minutes dictionary'''
         if self.minutes[number] is None:
             points = 0
 
@@ -39,6 +43,8 @@ class Player:
             return
 
     def set_pair(self, dices: Dices):
+        '''Method that sets the value of the pair key in the 
+        minutes dictionary'''
         if self.minutes["Pair"] is None:
             pair = {number for number in dices.dice
                     if dices.dice.count(number) > 1}
@@ -51,6 +57,8 @@ class Player:
             return
 
     def set_two_pair(self, dices: Dices):
+        '''Method that sets the value of the two pair key in the 
+        minutes dictionary'''
         if self.minutes["Two Pair"] is None:
             pair = {number for number in dices.dice
                     if dices.dice.count(number) > 1}
@@ -64,6 +72,8 @@ class Player:
             return
 
     def set_3_of_a_kind(self, dices: Dices):
+        '''Method that sets the value of the 3 of a kind key 
+        in the minutes dictionary'''
         if self.minutes["Three of a Kind"] is None:
             number_to_set = [number for number in dices.dice
                              if dices.dice.count(number) > 2]
@@ -76,6 +86,8 @@ class Player:
             return
 
     def set_4_of_a_kind(self, dices: Dices):
+        '''Method that sets the value of the 4 of a kind key 
+        in the minutes dictionary'''
         if self.minutes["Four of a Kind"] is None:
             number_to_set = [number for number in dices.dice
                              if dices.dice.count(number) > 3]
@@ -88,6 +100,8 @@ class Player:
             return
 
     def set_full_house(self, dices: Dices):
+        '''Method that sets the value of the full house key 
+        in the minutes dictionary'''
         if self.minutes["Full House"] is None and len(set(dices.dice)) == 2:
             self.minutes["Full House"] = sum(dices.dice)
 
@@ -96,6 +110,8 @@ class Player:
             return
 
     def set_small_straight(self, dices: Dices):
+        '''Method that sets the value of the small straight key 
+        in the minutes dictionary'''
         if self.minutes["Small Straight"] is None and len(set(
                 dices.dice)) == 5 and sum(dices.dice) == 15:
             self.minutes["Small Straight"] = 15
@@ -103,6 +119,8 @@ class Player:
             self.minutes["Small Straight"] = 'x'
 
     def set_large_straight(self, dices: Dices):
+        '''Method that sets the value of the large straight key 
+        in the minutes dictionary'''
         if self.minutes["Large Straight"] is None and len(set(
                 dices.dice)) == 5 and sum(dices.dice) == 20:
             self.minutes["Large Straight"] = 20
@@ -110,30 +128,40 @@ class Player:
             self.minutes["Large Straight"] = 'x'
 
     def set_yatzy(self, dices: Dices):
+        '''Method that sets the value of the yatzy key in the 
+        minutes dictionary'''
         if self.minutes["Yatzy"] is None and len(set(dices.dice)) == 1:
             self.minutes["Yatzy"] = 50
         else:
             self.minutes["Yatzy"] = 'x'
 
     def set_chance(self, dices: Dices):
+        '''Method that sets the value of the chance key in the 
+        minutes dictionary'''
         if self.minutes["Chance"] is None:
             self.minutes["Chance"] = sum(dices.dice)
         else:
             self.minutes["Chance"] = 'x'
 
     def check_upper(self):
+        '''Method that checks if every key in the upper part 
+        portion of minutes dictionary has a value'''
         for i in range(1, 7):
             if self.minutes[i] is None:
                 return False
         return True
 
     def check_total(self):
+        '''Method that checks if every key in the minutes 
+        dictionary has a value'''
         for points in self.minutes.items():
             if points[1] is None:
                 return False
         return True
 
     def upper_total_points(self):
+        '''Method that sets the total points of the upper part
+        section of a player'''
         points = 0
         for i in range(1, 7):
             if isinstance(self.minutes[i], int):
@@ -143,6 +171,7 @@ class Player:
         return 0
 
     def total_points(self):
+        '''Method that sets the total points of the player'''
         total_points = 0
         for item in self.minutes.items():
             if isinstance(item[1], int) and not isinstance(item[0], int):

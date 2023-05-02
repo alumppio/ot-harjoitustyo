@@ -18,12 +18,12 @@ class EventHandler:
         self.yatzy_sheet.draw_name(players, 1)
 
     def select_dice(self, dice_number):
-        """Method to select the dice"""
+        """Method to select the dice and draw them on to the yatzy paper"""
         self.dice_drawer.draw_select_dice(dice_number)
         self.dices_to_hold.append(dice_number-1)
 
     def unselect_dice(self):
-        """Method to unselect the dice"""
+        """Method to unselect the dice and the undo"""
         self.dice_drawer.draw_unselect_dice()
         self.dices_to_hold = []
 
@@ -57,6 +57,9 @@ class EventHandler:
                 self.dices_to_hold = []
 
     def set_upper_part(self, event):
+        '''Method that checks if any of the upper part frames were clicked. If some were
+        clicked it also sets the points in the Player class and draws the points on to 
+        the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
             if 169 <= event.pos[1] <= 192:
                 self.yatzy_sheet.set_upper_part(1, self.dices, self.players)
@@ -78,60 +81,91 @@ class EventHandler:
                 self.next_turn()
 
     def set_pair(self, event):
+        '''Method to check if the pair frame was clicked. If the frame was clicked
+        the method sets the points in the Player class and draws the points on 
+        to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
             if 342 <= event.pos[1] <= 365:
                 if self.yatzy_sheet.set_pair(self.dices, self.players):
                     self.next_turn()
 
     def set_two_pair(self, event):
+        '''Method to check if the two pair frame was clicked. If the frame was 
+        clicked the method sets the points in the Player class and draws the 
+        points on to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
             if 366 <= event.pos[1] <= 389:
                 if self.yatzy_sheet.set_two_pair(self.dices, self.players):
                     self.next_turn()
 
     def set_3_of_a_kind(self, event):
+        '''Method to check if the 3 of a kind frame was clicked. If it was clicked
+        the method sets the points in the Player class and draws the points on 
+        to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
             if 390 <= event.pos[1] <= 413:
                 if self.yatzy_sheet.set_3_of_a_kind(self.dices, self.players):
                     self.next_turn()
 
     def set_4_of_a_kind(self, event):
+        '''Method to check if the 4 of a kind frame was clicked. If it was clicked
+        the method sets the points in the Player class and draws the points on 
+        to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
             if 414 <= event.pos[1] <= 437:
                 if self.yatzy_sheet.set_4_of_a_kind(self.dices, self.players):
                     self.next_turn()
 
     def set_small_straight(self, event):
+        '''This method checks if the small straight frame was clicked. If it 
+        was clicked the method sets the points in the Player class and draws 
+        the points on to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
             if 438 <= event.pos[1] <= 461:
                 if self.yatzy_sheet.set_small_straight(self.dices, self.players):
                     self.next_turn()
 
     def set_large_straight(self, event):
+        '''This method checks if the large straight frame was clicked. If it 
+        was clicked the method sets the points in the Player class and draws 
+        the points on to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
             if 462 <= event.pos[1] <= 485:
                 if self.yatzy_sheet.set_large_straight(self.dices, self.players):
                     self.next_turn()
 
     def set_full_house(self, event):
+        '''This method checks if the full house frame was clicked. If it 
+        was clicked the method sets the points in the Player class and draws 
+        the points on to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
             if 486 <= event.pos[1] <= 509:
                 if self.yatzy_sheet.set_full_house(self.dices, self.players):
                     self.next_turn()
 
     def set_chance(self, event):
+        '''This method checks if the chance frame was clicked. If it was 
+        clicked the method sets the points in the Player class and draws 
+        the points on to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
             if 510 <= event.pos[1] <= 533:
                 if self.yatzy_sheet.set_chance(self.dices, self.players):
                     self.next_turn()
 
     def set_yatzy(self, event):
+        '''This method checks if the yatzy frame was clicked. If it was 
+        clicked the method sets the points in the Player class and draws 
+        the points on to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 <= event.pos[0] <= 199:
             if 534 <= event.pos[1] <= 557:
                 if self.yatzy_sheet.set_yatzy(self.dices, self.players):
                     self.next_turn()
 
     def set_lower_part(self, event):
+        '''This method checks the lower part portion of the yatzy sheet, 
+        meaning everything after ones, ... , sixes using method defined 
+        earlier. If any of the lower part frames were the points were set
+        in the Player class and points would be drawn to the sreen '''
         self.set_pair(event)
         self.set_two_pair(event)
         self.set_3_of_a_kind(event)
@@ -143,6 +177,8 @@ class EventHandler:
         self.set_yatzy(event)
 
     def set_total(self):
+        '''Checks if either of the total points were ready to calculated.
+        If they were ready summed points would be drawn to the screen'''
         if self.players.check_total():
             self.yatzy_sheet.draw_total_points(self.players)
 
@@ -150,6 +186,8 @@ class EventHandler:
             self.yatzy_sheet.draw_upper_points(self.players)
 
     def next_turn(self):
+        '''Method to change the turn as in rolling the dice and resetting
+        the dice roll count'''
         self.dices.next_turn()
         self.dice_drawer.draw_rolled_dice()
         self.dice_drawer.draw_all()

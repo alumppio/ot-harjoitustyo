@@ -111,13 +111,16 @@ class DrawDice:
         pygame.draw.rect(self.surface, GRAY, pygame.Rect(548, 3, 154, 110), 2)
 
     def draw_select_dice(self, dice_number):
+        '''Draw selected dice highlighted with a red square'''
         pygame.draw.rect(self.surface, RED, pygame.Rect(DICE_X + DICE_GAP*(dice_number-1)
                         + DICE_A*(dice_number-1)-4, DICE_Y-4, DICE_A+8, DICE_A+8), 2)
 
     def draw_rolled_dice(self):
+        '''Draw rolled dice'''
         pygame.draw.rect(self.surface, WHITE, pygame.Rect(100, 0, 600, 115))
 
     def draw_unselect_dice(self):
+        '''Deleting the red squares that were indicating the selected dice'''
         for dice_number in range(5):
             pygame.draw.rect(self.surface, WHITE, pygame.Rect(DICE_X +
                                                               DICE_GAP *

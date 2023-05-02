@@ -5,6 +5,7 @@ from config.game_setup import Setup
 
 
 def main():
+    '''Main function that runs the game'''
     dices = Dices()
     player = Player()
     setup = Setup()

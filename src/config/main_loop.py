@@ -4,12 +4,13 @@ from repositories.constants import TIMER, FPS
 
 
 class MainLoop:
+    '''Initializing the mainloop using the EventHandler class'''
     def __init__(self, dices, players):
         self.event_handler = EventHandler(dices, players)
 
     def handle_events(self):
-        # Check all occurred events
-        # Main gameloop
+        '''Check all occurred events
+        Main gameloop '''
 
         while self.event_handler.running:
             for event in pygame.event.get():
