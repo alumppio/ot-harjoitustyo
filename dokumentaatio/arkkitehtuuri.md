@@ -94,6 +94,7 @@ sequenceDiagram
     end
 
 ```
+Nyt event_handlerin luupissa mainittu event = pygame.event.get(). 
 
 ## Heikkoudet
 
