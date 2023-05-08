@@ -1,6 +1,6 @@
 import pygame
 from services.connection import CONNECTION
-from repositories.constants import SCREEN, END_FONT, END_TEXT, BLACK, WHITE
+from repositories.constants import SCREEN, END_FONT, END_TEXT, BLACK, WHITE, END_TIP
 
 class DrawEndGame:
     def __init__(self):
@@ -10,6 +10,7 @@ class DrawEndGame:
         self.count = 1
         SCREEN.fill(WHITE)
         SCREEN.blit(END_TEXT, pygame.Rect(50, 30, 20, 30))
+        SCREEN.blit(END_TIP, pygame.Rect(30, 400, 20, 30))
         pygame.display.flip()
 
     def draw_high_scores(self):

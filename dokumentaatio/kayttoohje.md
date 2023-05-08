@@ -7,6 +7,11 @@ Ennen käynnistämistä täytyy poetry alustaa
 ```bash
 poetry install
 ```
+Tämän jälkeen täytyy alustaa pelin huippupistetaulukko komennolla
+
+```bash
+poetry run invoke build
+```
 
 Tämän jälkeen ohjelman voi käynnistää komennolla
 ```bash

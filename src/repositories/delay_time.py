@@ -10,7 +10,8 @@ class Delay:
     def delay_time(self, time):
         while self.running:
             TIMER.tick(FPS)
+            pygame.event.get()
             current_time = pygame.time.get_ticks()
-
+            pygame.display.flip()
             if current_time >= time:
                 self.running = False

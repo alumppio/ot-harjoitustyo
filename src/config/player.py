@@ -166,7 +166,7 @@ class Player:
         for i in range(1, 7):
             if isinstance(self.minutes[i], int):
                 points += self.minutes[i]
-        if points >= 52:
+        if points >= 63:
             return points
         return 0
 

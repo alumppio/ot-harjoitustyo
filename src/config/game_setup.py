@@ -1,6 +1,6 @@
 import pygame
 from repositories.constants import WHITE, RED, START_FONT, START_TEXT_NAME \
-    , SCREEN, START_TEXT_PLAYERS, BLACK
+    , SCREEN, START_TEXT_PLAYERS, BLACK, START_TIP_AMOUNT, START_TIP_NAMES
 from config.dice import Dices
 from config.player import Player
 from config.gui import EventHandler
@@ -20,7 +20,6 @@ class Setup:
     def name_setup_loop(self, player, player_number):
         '''A method that can be used to check occured events and sets the
         players name that was written'''
-        SCREEN.blit(START_TEXT_NAME, pygame.Rect(40, 300, 20, 30))
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_BACKSPACE and 0 < len(self.name):
@@ -36,8 +35,8 @@ class Setup:
         self.draw_name_setup(name, player_number)
 
     def amount_of_players_loop(self):
-        SCREEN.blit(START_TEXT_PLAYERS, pygame.Rect(40, 300, 20, 30))
         for event in pygame.event.get():
+            print(event)
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_BACKSPACE and 0 < len(self.players_amount):
                     self.players_amount = self.players_amount[:-1]
@@ -86,8 +85,9 @@ class Setup:
 
     def draw_amount_setup(self, number):
         SCREEN.fill(WHITE)
-        SCREEN.blit(number, pygame.Rect(500, 200, 20, 30))
+        SCREEN.blit(number, pygame.Rect(430, 200, 20, 30))
         SCREEN.blit(START_TEXT_PLAYERS, pygame.Rect(40, 200, 20, 30))
+        SCREEN.blit(START_TIP_AMOUNT, pygame.Rect(50, 300, 100, 30))
         pygame.display.flip()
 
     def draw_name_setup(self, name, player_number):
@@ -97,4 +97,5 @@ class Setup:
         SCREEN.blit(START_TEXT_NAME, pygame.Rect(40, 200, 20, 30))
         player = START_FONT.render(f'Player{player_number+1}', True, BLACK, WHITE)
         SCREEN.blit(player, pygame.Rect(40, 150, 20, 30))
+        SCREEN.blit(START_TIP_NAMES, pygame.Rect(50, 300, 100, 30))
         pygame.display.flip()

@@ -1,8 +1,13 @@
 from invoke import task
 
 @task
+def build(ctx):
+    ctx.run("python3 src/services/build.py", pty=True)
+    # Builds the high score database file
+
+@task
 def start(ctx):
-    ctx.run("python3 src/main.py", pty=True) #When the game is ready
+    ctx.run("python3 src/main.py", pty=True)
 
 @task
 def test(ctx):

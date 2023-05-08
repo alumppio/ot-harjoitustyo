@@ -15,6 +15,12 @@ Jatsi on noppapeli, jota voi pelata kahdestaan tai suuremassa ryhmässä. Peliss
 
 # Komentorivitoiminnot 
 
+## !! Ennen suoritusta !!
+Alusta huippupistetaulukko komennolla:
+```bash
+poetry run invoke build
+```
+
 ## Ohjelman suoritus
 Suorita ohjelma komentoriviltä komennolla:
 ```bash
