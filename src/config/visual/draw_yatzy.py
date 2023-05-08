@@ -168,4 +168,4 @@ class DrawYatzy:
         (164+76*player_number,115),(158+76*player_number,125)])
 
     def next_player(self):
-        pygame.draw.rect(self.surface, WHITE, pygame.Rect(150, 110, 390, 20))
+        pygame.draw.rect(self.surface, WHITE, pygame.Rect(150, 110, 400, 20))

@@ -36,7 +36,6 @@ class Setup:
 
     def amount_of_players_loop(self):
         for event in pygame.event.get():
-            print(event)
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_BACKSPACE and 0 < len(self.players_amount):
                     self.players_amount = self.players_amount[:-1]

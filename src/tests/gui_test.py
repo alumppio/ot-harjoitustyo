@@ -83,7 +83,7 @@ class TestGUI(unittest.TestCase):
         (200, 350)})
         self.event_handler.dices.dice = [6,6,4,4,1]
         self.event_handler.set_pair(event)
-        self.assertNotEqual(self.event_handler.player.minutes['Pair'], 12)
+        self.assertEqual(self.event_handler.player.minutes['Pair'], 12)
 
 
     def test_set_two_pair(self):
@@ -91,52 +91,59 @@ class TestGUI(unittest.TestCase):
         (200, 370)})
         self.event_handler.dices.dice = [6,6,5,5,1]
         self.event_handler.set_two_pair(event)
-        self.assertNotEqual(self.event_handler.player.minutes['Two Pair'], 22)
+        self.assertEqual(self.event_handler.player.minutes['Two Pair'], 22)
 
 
     def test_set_3_of_a_kind(self):
         event = pygame.event.Event(pygame.MOUSEBUTTONDOWN, {'pos': 
         (200, 400)})
+        self.event_handler.dices.dice = [3,3,3,4,1]
         self.event_handler.set_3_of_a_kind(event)
-        self.assertNotEqual(self.event_handler.player.minutes['Three of a Kind'], None)
+        self.assertEqual(self.event_handler.player.minutes['Three of a Kind'], 9)
 
     
     def test_set_4_of_a_kind(self):
         event = pygame.event.Event(pygame.MOUSEBUTTONDOWN, {'pos': 
         (200, 420)})
+        self.event_handler.dices.dice = [5,5,5,5,1]
         self.event_handler.set_4_of_a_kind(event)
-        self.assertNotEqual(self.event_handler.player.minutes['Four of a Kind'], None)
+        self.assertEqual(self.event_handler.player.minutes['Four of a Kind'], 20)
 
 
     def test_set_small_straight(self):
         event = pygame.event.Event(pygame.MOUSEBUTTONDOWN, {'pos': 
         (200, 450)})
+        self.event_handler.dices.dice = [5,4,3,2,1]
         self.event_handler.set_small_straight(event)
-        self.assertNotEqual(self.event_handler.player.minutes['Small Straight'], None)
+        self.assertEqual(self.event_handler.player.minutes['Small Straight'], 15)
 
     def test_set_large_straight(self):
         event = pygame.event.Event(pygame.MOUSEBUTTONDOWN, {'pos': 
         (200, 480)})
+        self.event_handler.dices.dice = [6,5,4,3,2]
         self.event_handler.set_large_straight(event)
-        self.assertNotEqual(self.event_handler.player.minutes['Large Straight'], None)
+        self.assertEqual(self.event_handler.player.minutes['Large Straight'], 20)
 
     def test_set_full_house(self):
         event = pygame.event.Event(pygame.MOUSEBUTTONDOWN, {'pos': 
         (200, 500)})
+        self.event_handler.dices.dice = [6,6,6,2,2]
         self.event_handler.set_full_house(event)
-        self.assertNotEqual(self.event_handler.player.minutes['Full House'], None)
+        self.assertEqual(self.event_handler.player.minutes['Full House'], 22)
 
     def test_set_chance(self):
         event = pygame.event.Event(pygame.MOUSEBUTTONDOWN, {'pos': 
         (200, 530)})
+        self.event_handler.dices.dice = [6,6,5,4,3]
         self.event_handler.set_chance(event)
-        self.assertNotEqual(self.event_handler.player.minutes['Chance'], None)
+        self.assertEqual(self.event_handler.player.minutes['Chance'], 24)
 
     def test_set_yatzy(self):
         event = pygame.event.Event(pygame.MOUSEBUTTONDOWN, {'pos': 
         (200, 540)})
+        self.event_handler.dices.dice = [1,1,1,1,1]
         self.event_handler.set_yatzy(event)
-        self.assertNotEqual(self.event_handler.player.minutes['Yatzy'], None)
+        self.assertEqual(self.event_handler.player.minutes['Yatzy'], 50)
 
     def test_next_turn(self):
         self.event_handler.dices.roll_dice([])
