@@ -1,4 +1,4 @@
-# Käytetyt tunnit yhteensä: noin 33 tuntia
+# Käytetyt tunnit yhteensä: noin 36 tuntia
 
 ## 28.3: 
 20-30min, tein alustavan vaatimusmäärittelyn ja mietin projektin aihetta
@@ -52,8 +52,13 @@ Kipeänä pitkään projetkin edistäminen ollut vaikeaa.
 
 1000-1100: Aloitin tekemään peliä edeltävän aloitusruudun, jossa voi päättää pelaajan nimen.
 
-## 5.2 
+## 2.5 
 
 0900-1000: Tein labtoolissa ehdotettuja korjauksia.
 1800-1900: Tein loppuun aloitusruudun, jossa pelaaja voi päättää nimensä. Nimi lukee jatsipelipaperissa. Lopulliset pisteet näkyvät nyt myös oikein. 
 2000-2330: Dokumentaatiota kuntoon, pylint-virheitä korjattu, arkkitehtuurikuvausta muutettu, docstringejä lisätty.
+
+
+## 5.5 
+
+1700-2000: Muokattu koodia niin, että pelin voi alustaa useammalla pelaajalla ja peliä voi pelata useammalla pelaajalla. 

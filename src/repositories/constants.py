@@ -23,9 +23,14 @@ SCREEN_HEIGHT = 600
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 FONT = pygame.font.SysFont('arial', 12)
 START_FONT = pygame.font.SysFont('arial', 30)
+END_FONT = pygame.font.SysFont('arial', 28)
 
-START_TEXT = START_FONT.render(
+START_TEXT_PLAYERS = START_FONT.render(
+    'How many players (Max 6):', True, BLACK, WHITE)
+START_TEXT_NAME = START_FONT.render(
     'Choose your name (Max 8 char.):', True, BLACK, WHITE)
+END_TEXT = START_FONT.render(
+    'High Scores (Top 5 points):', True, RED, WHITE)
 
 DIRNAME = os.path.dirname(__file__)
 DATA_FILE_PATH1 = os.path.join(

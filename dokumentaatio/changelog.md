@@ -22,3 +22,8 @@
 
 - Pelissä voi nyt päättää oman nimensä
 - Lopulliset pisteet näkyvät oikein
+
+## Viikko7
+
+- Peliä voi pelata useampi pelaaja
+

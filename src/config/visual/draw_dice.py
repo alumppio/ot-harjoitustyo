@@ -10,6 +10,7 @@ class DrawDice:
     def __init__(self, dices: Dices, surface):
         self.dices = dices
         self.surface = surface
+        self.clean_dice()
 
     def dice_side_1(self, dice_number):
         """Defining dice side 1"""
@@ -115,9 +116,10 @@ class DrawDice:
         pygame.draw.rect(self.surface, RED, pygame.Rect(DICE_X + DICE_GAP*(dice_number-1)
                         + DICE_A*(dice_number-1)-4, DICE_Y-4, DICE_A+8, DICE_A+8), 2)
 
-    def draw_rolled_dice(self):
+    def clean_dice(self):
         '''Draw rolled dice'''
-        pygame.draw.rect(self.surface, WHITE, pygame.Rect(100, 0, 600, 115))
+        pygame.draw.rect(self.surface, WHITE, pygame.Rect(155, 0, 390, 115))
+        pygame.display.flip()
 
     def draw_unselect_dice(self):
         '''Deleting the red squares that were indicating the selected dice'''

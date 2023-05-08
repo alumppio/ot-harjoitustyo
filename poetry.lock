@@ -426,6 +426,17 @@ spelling = ["pyenchant (>=3.2,<4.0)"]
 testutils = ["gitpython (>3)"]
 
 [[package]]
+name = "pysqlite3"
+version = "0.5.0"
+description = "DB-API 2.0 interface for Sqlite 3.x"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pysqlite3-0.5.0.tar.gz", hash = "sha256:3bbddd291e21c83670034f17a13edd0e0ef6ef1a53764ecdcb322d36d7302287"},
+]
+
+[[package]]
 name = "pytest"
 version = "7.2.2"
 description = "pytest: simple powerful testing with Python"
@@ -573,4 +584,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "af61deb4f34cbdd32574144c3ae325298617b7823d28a906db9a4ba2faf4e8c0"
+content-hash = "89f6a96e7a1f58824fc9db663adc3279b3feb5158a6a39b78a94cc9dee9fc801"
