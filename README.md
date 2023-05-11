@@ -15,7 +15,9 @@ Jatsi on noppapeli, jota voi pelata kahdestaan tai suuremassa ryhmässä. Peliss
 
 # Komentorivitoiminnot 
 
-## !! Ennen suoritusta !!
+```
++ !! Ennen suoritusta !!
+```
 Alusta huippupistetaulukko komennolla:
 ```bash
 poetry run invoke build
