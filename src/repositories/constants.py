@@ -2,7 +2,9 @@ import os
 import pygame
 
 pygame.init()
-# Constants
+
+## This file consists of constants used in the game ## 
+
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GRAY = (180, 180, 180)
@@ -37,7 +39,7 @@ START_TEXT_NAME = START_FONT.render(
 END_TEXT = START_FONT.render(
     'High Scores (Top 5 points):', True, RED, WHITE)
 END_TIP = TIP_FONT.render(
-    'The game will close shortly. Displaying top 5 scores (if there is that many)', True, GRAY, WHITE
+'The game will close shortly. Displaying top 5 scores (if there is that many)', True, GRAY, WHITE
 )
 
 DIRNAME = os.path.dirname(__file__)

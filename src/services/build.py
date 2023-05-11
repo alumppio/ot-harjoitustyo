@@ -1,4 +1,4 @@
-from connection import CONNECTION
+from services.connection import CONNECTION
 
 
 def create_table(connection):

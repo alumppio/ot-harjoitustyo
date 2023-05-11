@@ -1,5 +1,5 @@
-import pygame
 import sys
+import pygame
 from repositories.constants import WHITE, RED, START_FONT, START_TEXT_NAME, SCREEN,\
     START_TEXT_PLAYERS, BLACK, START_TIP_AMOUNT, START_TIP_NAMES
 from config.dice import Dices

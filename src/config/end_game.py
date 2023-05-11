@@ -7,7 +7,6 @@ from repositories.delay_time import Delay
 class EndGame:
     def __init__(self, players):
         self.players = players
-        self.drawer = DrawEndGame()
 
     def set_high_scores(self):
         for player in self.players:
@@ -18,7 +17,8 @@ class EndGame:
             CONNECTION.commit()
 
     def show_high_scores(self):
-        self.drawer.draw_high_scores()
+        drawer = DrawEndGame()
+        drawer.draw_high_scores()
 
     def end_game(self):
         self.set_high_scores()

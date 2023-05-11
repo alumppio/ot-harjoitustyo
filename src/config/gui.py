@@ -1,3 +1,4 @@
+import sys
 import pygame
 from config.dice import Dices
 from config.visual.draw_dice import DrawDice
@@ -61,7 +62,7 @@ class EventHandler:
         clicked it also sets the points in the Player class and draws the points on to 
         the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 + 76*self.player_number \
-                <= event.pos[0] <= 198 + 76*self.player_number:
+            <= event.pos[0] <= 198 + 76*self.player_number:
             if 169 <= event.pos[1] <= 192:
                 if self.yatzy_sheet.set_upper_part(1, self.dices, self.player, self.player_number):
                     self.next_turn()
@@ -209,4 +210,4 @@ class EventHandler:
     def quit(self, event):
         """Method to quit the game"""
         if event.type == pygame.QUIT:
-            exit()
+            sys.exit()

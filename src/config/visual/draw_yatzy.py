@@ -175,7 +175,7 @@ class DrawYatzy:
 
     def draw_current_player(self, player_number):
         pygame.draw.polygon(self.surface, RED, [(153+76*player_number, 115),
-                                                (164+76*player_number, 115), (158+76*player_number, 125)])
+                        (164+76*player_number, 115), (158+76*player_number, 125)])
 
     def next_player(self):
         pygame.draw.rect(self.surface, WHITE, pygame.Rect(150, 110, 400, 20))

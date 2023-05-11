@@ -1,5 +1,6 @@
 import pygame
 from repositories.constants import TIMER, FPS
+from repositories.delay_time import Delay
 
 
 class MainLoop:
@@ -24,7 +25,7 @@ class MainLoop:
                 self.event_handle_loop(player)
             self.check_if_done()
 
-        pygame.time.delay(300)
+        Delay(500)
 
     def draw_names(self):
         for player in self.players:
