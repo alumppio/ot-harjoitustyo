@@ -2,6 +2,7 @@ import pygame
 from services.connection import CONNECTION
 from repositories.constants import SCREEN, END_FONT, END_TEXT, BLACK, WHITE, END_TIP
 
+
 class DrawEndGame:
     def __init__(self):
         self.scores = CONNECTION.execute("""
@@ -20,7 +21,8 @@ class DrawEndGame:
             if self.count > 5:
                 break
         pygame.display.flip()
-        
+
     def draw(self, name, score, number):
-        text = END_FONT.render(f'{number}: {name} - {score} points', True, BLACK, WHITE)
+        text = END_FONT.render(
+            f'{number}: {name} - {score} points', True, BLACK, WHITE)
         SCREEN.blit(text, pygame.Rect(60, 60+30*number, 20, 30))

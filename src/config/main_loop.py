@@ -4,38 +4,38 @@ from repositories.constants import TIMER, FPS
 
 class MainLoop:
     ''' Initializing the mainloop using the EventHandler class
-  
+
     Args: 
         players = [EventHandler(), ... , EventHandler()]
 
         '''
-    
+
     def __init__(self, players):
         self.players = players
         self.draw_names()
         self.running = True
-        
+
     def handle_events(self):
         '''Check all occurred events
         Main gameloop '''
-        
+
         while self.running:
             for player in self.players:
                 self.event_handle_loop(player)
             self.check_if_done()
 
         pygame.time.delay(300)
-            
+
     def draw_names(self):
-        for PLAYER in self.players:
-            PLAYER.yatzy_sheet.draw_name(PLAYER.player, self.players.index(PLAYER))
-    
+        for player in self.players:
+            player.yatzy_sheet.draw_name(
+                player.player, self.players.index(player))
+
     def check_if_done(self):
-        for PLAYER in self.players:
-            if not PLAYER.player.check_total():
-                return False
+        for player in self.players:
+            if not player.player.check_total():
+                break
             self.running = False
-            
 
     def event_handle_loop(self, player):
         player.dice_drawer.clean_dice()

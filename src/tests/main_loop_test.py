@@ -7,16 +7,16 @@ from config.main_loop import MainLoop
 
 class TestMainLoop(unittest.TestCase):
     def setUp(self):
-        self.players = [gui.EventHandler(dice.Dices(),player.Player(),1),
-                        gui.EventHandler(dice.Dices(),player.Player(),2),
-                        gui.EventHandler(dice.Dices(),player.Player(),3)]
+        self.players = [gui.EventHandler(dice.Dices(), player.Player(), 1),
+                        gui.EventHandler(dice.Dices(), player.Player(), 2),
+                        gui.EventHandler(dice.Dices(), player.Player(), 3)]
         self.set_test_names()
         self.main_loop = MainLoop(self.players)
 
     def set_test_names(self):
         for i in range(3):
             self.players[i].player.minutes['Name'] = f'TestUser{i+1}'
-        
+
     def test_names_set(self):
         for i in range(3):
             self.assertNotEqual(self.players[i].player.minutes['Name'], None)

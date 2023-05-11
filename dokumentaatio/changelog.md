@@ -26,4 +26,5 @@
 ## Viikko7
 
 - Peliä voi pelata useampi pelaaja
-
+- Pelin lopulliset pisteet tallennetaan paikalliseen tietokantaan
+- Viisi korkeinta pistettä nähdään pelin lopussa

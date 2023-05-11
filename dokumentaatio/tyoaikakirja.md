@@ -62,3 +62,16 @@ Kipeänä pitkään projetkin edistäminen ollut vaikeaa.
 ## 5.5 
 
 1700-2000: Muokattu koodia niin, että pelin voi alustaa useammalla pelaajalla ja peliä voi pelata useammalla pelaajalla. 
+
+## 8.5
+
+1000-2000: Peli loppuu ja pelaajien pisteet tallennetaan pysyvästi paikalliseen tietokantaan. Pelin lopussa nähdään viisi parasta pistettä 
+Testausta edistetty huomattavasti. 
+
+## 10.5
+
+1500-1600: Docstringejä päivitetty, koodia siistitty.
+
+## 11.5 
+
+

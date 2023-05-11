@@ -61,7 +61,7 @@ class EventHandler:
         clicked it also sets the points in the Player class and draws the points on to 
         the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 + 76*self.player_number \
-            <= event.pos[0] <= 198+ 76*self.player_number:
+                <= event.pos[0] <= 198 + 76*self.player_number:
             if 169 <= event.pos[1] <= 192:
                 if self.yatzy_sheet.set_upper_part(1, self.dices, self.player, self.player_number):
                     self.next_turn()
@@ -86,7 +86,7 @@ class EventHandler:
         the method sets the points in the Player class and draws the points on 
         to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 + 76*self.player_number \
-            <= event.pos[0] <= 198 + 76*self.player_number:
+                <= event.pos[0] <= 198 + 76*self.player_number:
             if 342 <= event.pos[1] <= 365:
                 if self.yatzy_sheet.set_pair(self.dices, self.player, self.player_number):
                     self.next_turn()
@@ -96,7 +96,7 @@ class EventHandler:
         clicked the method sets the points in the Player class and draws the 
         points on to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 + 76*self.player_number \
-             <= event.pos[0] <= 198 + 76*self.player_number:
+                <= event.pos[0] <= 198 + 76*self.player_number:
             if 366 <= event.pos[1] <= 389:
                 if self.yatzy_sheet.set_two_pair(self.dices, self.player, self.player_number):
                     self.next_turn()
@@ -106,7 +106,7 @@ class EventHandler:
         the method sets the points in the Player class and draws the points on 
         to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 + 76*self.player_number \
-            <= event.pos[0] <= 198 + 76*self.player_number:
+                <= event.pos[0] <= 198 + 76*self.player_number:
             if 390 <= event.pos[1] <= 413:
                 if self.yatzy_sheet.set_3_of_a_kind(self.dices, self.player, self.player_number):
                     self.next_turn()
@@ -116,7 +116,7 @@ class EventHandler:
         the method sets the points in the Player class and draws the points on 
         to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 + 76*self.player_number \
-            <= event.pos[0] <= 198 + 76*self.player_number:
+                <= event.pos[0] <= 198 + 76*self.player_number:
             if 414 <= event.pos[1] <= 437:
                 if self.yatzy_sheet.set_4_of_a_kind(self.dices, self.player, self.player_number):
                     self.next_turn()
@@ -126,7 +126,7 @@ class EventHandler:
         was clicked the method sets the points in the Player class and draws 
         the points on to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 + 76*self.player_number \
-             <= event.pos[0] <= 198 + 76*self.player_number:
+                <= event.pos[0] <= 198 + 76*self.player_number:
             if 438 <= event.pos[1] <= 461:
                 if self.yatzy_sheet.set_small_straight(self.dices, self.player, self.player_number):
                     self.next_turn()
@@ -136,7 +136,7 @@ class EventHandler:
         was clicked the method sets the points in the Player class and draws 
         the points on to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 + 76*self.player_number \
-            <= event.pos[0] <= 198 + 76*self.player_number:
+                <= event.pos[0] <= 198 + 76*self.player_number:
             if 462 <= event.pos[1] <= 485:
                 if self.yatzy_sheet.set_large_straight(self.dices, self.player, self.player_number):
                     self.next_turn()
@@ -146,7 +146,7 @@ class EventHandler:
         was clicked the method sets the points in the Player class and draws 
         the points on to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 + 76*self.player_number \
-             <= event.pos[0] <= 198 + 76*self.player_number:
+                <= event.pos[0] <= 198 + 76*self.player_number:
             if 486 <= event.pos[1] <= 509:
                 if self.yatzy_sheet.set_full_house(self.dices, self.player, self.player_number):
                     self.next_turn()
@@ -156,7 +156,7 @@ class EventHandler:
         clicked the method sets the points in the Player class and draws 
         the points on to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 + 76*self.player_number \
-            <= event.pos[0] <= 198 + 76*self.player_number:
+                <= event.pos[0] <= 198 + 76*self.player_number:
             if 510 <= event.pos[1] <= 533:
                 if self.yatzy_sheet.set_chance(self.dices, self.player, self.player_number):
                     self.next_turn()
@@ -166,7 +166,7 @@ class EventHandler:
         clicked the method sets the points in the Player class and draws 
         the points on to the screen'''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 + 76*self.player_number \
-            <= event.pos[0] <= 198 + 76*self.player_number:
+                <= event.pos[0] <= 198 + 76*self.player_number:
             if 534 <= event.pos[1] <= 557:
                 if self.yatzy_sheet.set_yatzy(self.dices, self.player, self.player_number):
                     self.next_turn()

@@ -3,10 +3,10 @@ import config.dice as Dices
 
 class Player:
     def __init__(self):
-
         '''Idea for this dictionary was taken from chatGPT. This dictionary
         represents the yatzy sheet that contains all the information about the
         points'''
+
         self.minutes = {
             'Name': None,
             1: None,
@@ -27,7 +27,12 @@ class Player:
 
     def set_upper_part(self, dices: Dices, number: int):
         '''Method that sets the upper part meaning the values of keys 
-        1 to 6 in the minutes dictionary'''
+        1 to 6 in the minutes dictionary
+        
+        Args:
+            dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
+            number (int) : number that the player wants to set in the yatzy sheet
+        '''
         if self.minutes[number] is None:
             points = 0
 
@@ -44,7 +49,11 @@ class Player:
 
     def set_pair(self, dices: Dices):
         '''Method that sets the value of the pair key in the 
-        minutes dictionary'''
+        minutes dictionary
+
+        Args:
+            dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
+        '''
         if self.minutes["Pair"] is None:
             pair = {number for number in dices.dice
                     if dices.dice.count(number) > 1}
@@ -58,7 +67,11 @@ class Player:
 
     def set_two_pair(self, dices: Dices):
         '''Method that sets the value of the two pair key in the 
-        minutes dictionary'''
+        minutes dictionary
+        
+        Args:
+            dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices        
+        '''
         if self.minutes["Two Pair"] is None:
             pair = {number for number in dices.dice
                     if dices.dice.count(number) > 1}
@@ -73,7 +86,12 @@ class Player:
 
     def set_3_of_a_kind(self, dices: Dices):
         '''Method that sets the value of the 3 of a kind key 
-        in the minutes dictionary'''
+        in the minutes dictionary
+        
+        Args:
+            dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
+        '''
+
         if self.minutes["Three of a Kind"] is None:
             number_to_set = [number for number in dices.dice
                              if dices.dice.count(number) > 2]
