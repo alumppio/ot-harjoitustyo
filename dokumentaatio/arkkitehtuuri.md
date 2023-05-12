@@ -9,31 +9,41 @@ Ohjelma koostuu useammasta tiedostosta ja pääpelilooppi suoritetaan tiedostoss
         main .. config
         repositories .. config : Vakioita
         repositories .. visual : Vakioita
-        resources .. config : Pelissä käytettäviä kuvia
-        resources .. visual : Pelissä käytettäviä kuvia
+        resources .. repositories : Pelissä käytettäviä kuvia
         config .. visual
+        services .. config
+        services .. visual
 
         class config{
             dice.py
+            end_game.py
             gui.py
             main_loop.py
             player.py
-            pygame_initial.py
             folder : visual
         }
 
         class visual{
             draw_dice.py
             draw_yatzy.py
+            draw_end_game.py
         }
 
         class repositories{
             contants.py
+            delay_time.py
         }
 
         class resources{
             peliin liittyviä kuvia...
         }
+        
+        class services{
+            build.py
+            connection.py
+            high_scores.db
+        }
+
 ```
 
 ## Sovelluslogiikka
@@ -60,40 +70,45 @@ Tiedosto draw_yatzy.py pirtää pelin jatsipaperin ja piirtää paperiin pisteet
 
 ## Toiminta
 
-Kun ohjelma main.py suoritetaan, niin sekvenssikaavion mukaan peli alustetaan ja päästään pelin "ikuiseen" MainLoop-luokan luuppiin, sillä pelin voin tällä hetkellä lopettaa vain manuaalisesti klikkaamalla raksia.
+Kun ohjelma main.py suoritetaan, niin ensiksi suoritetaan pelin alustus Setup-luokan olioilla, joka toimii sekvenssikaavion mukaisesti.
 
 ```mermaid
 sequenceDiagram
-    main()-->dices : Dices()
-    main()-->player : Player()
-    main()-->setup : Setup()
+    main()-->setup : Setup(), pelin alustamiseen käytettävä luokka
     constants-->setup : Tarvittavia vakioita ja pygame.init()
-    player-->setup : game_setup(player)
-    loop while setup.running
-    	setup-->setup : game_setup_loop(player)
+    main()-->setup : setup.game_setup(), aloittaa pelin alustuksen luupin, kuinka monta pelaajaa ja pelaajien nimet 
+    setup-->setup : game_setup(), luupissa valitaan pelaajien määrä ja nimet
+    setup-->setup : amount_setup()
+    loop while self.running
+        setup-->setup : amount_of_players_loop(), valitaan pelajaien määrä
+        setup-->setup : draw_amount_setup(number), piirtää pelaajien määrän liittyvät asiat 
+    end 
+    setup-->setup : name_setup(int(players_amount)), valitaan haluttujen pelaajien nimet ja lisätään nimettyjen pelaajien Player-luokka olioit setup.players listaan.
+    player-->setup : Player(), Player-luokan olio, joka vastaa jatsipelin pistetaulukkoa ja sen käsittelyyn liittyviä toimintoja.
+    loop while self.running : kaikille pelaajille erikseen for-luupilla
+        setup-->setup : name_setup_loop(), valitaan pelaajan nimi 
     end
-    setup-->player : player.minutes['Name'] = UserInput
+    setup-->setup : convert_to_event_handlers(), jokaiselle pelaajalle
+    dices-->setup : Dices(), jatsipelin noppia vastaavat oliot
+    gui-->setup : EventHandler(Dices(), player, pelaajan_numero), alustetaan Player-luokan oliosta EventHandler-luokan olio mainlooppia varten. Tämä luokka käsittelee pelin käyttäjän aiheuttamat tapahtumat eli hiiren klikkaukset-
+    setup-->main() : setup.event_handlers
     
-    player-->main() :  
-    dices-->main() : 
-    main()-->game : MainLoop(dices, player)
-    game-->event_handler : EventHandler(dices, player)
-    game-->event_handler : handle.events()
-    constants-->event_handler : Tarvittavia vakioita
-    loop while event_handler.running
-        event_handler-->event_handler : pygame.timer.tick(FPS)
-        event_handler-->event_handler : dice_drawer.draw_all()
-        event_handler-->event_handler : hold_dice(event)
-        event_handler-->event_handler : undo_hold_dice(event)
-        event_handler-->event_handler : roll_dice(event)
-        event_handler-->event_handler : quit(event)
-        event_handler-->event_handler : set_upper_part(event)
-        event_handler-->event_handler : set_lower_part(event)
-        event_handler-->event_handler : set_total()
-        event_handler-->event_handler : pygame.display.flip()
-    end
-
+    
 ```
+Tämän jälkeen main tiedostossa luodaan pelin pääluuppiin liittyvä MainLoop-luokan olio, jota käytetään kaavion mukaisesti
+
+```mermaid
+sequenceDiagram
+    main()-->game : MainLoop(setup.event_handlers)
+    game-->game : draw_names(), piirtää pelaajien nimet
+    main()-->game : game.handle_events()
+    game-->game : handle_events()
+    loop while self.running : jokaiselle pelaajalle erikseen
+        game-->game : event_hande_loop(EventHandler), luuppi, jossa tarkastellaan pelaamiseen liittyvät tapahtumat.
+        game-->game : check_if_done(), tarkistaan onko peli pelattu loppuun
+    end
+```
+
 Nyt event_handlerin luupissa mainittu event = pygame.event.get(). 
 
 ## Heikkoudet
