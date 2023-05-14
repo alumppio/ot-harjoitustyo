@@ -36,10 +36,10 @@ Noppia voi heittää kaksi kertaa uudestaan ja halutessaan osia nopista voi pit�
 
 ![image](https://github.com/alumppio/ot-harjoitustyo/assets/98692578/a1b03ac7-65b4-4db5-b22f-604e3e4ef43d)
 
-Peli loppuu siihen, kun kaikki kohdat on saatu täytettyä pisteillä tai rukseilla. Lopulliset pisteet näkyvät viimeisessä sarakkeessa. Peli ei korosta kuka on voittanut pelin, mutta korkeimmat pisteet kerännyt pelaaja voittaa. 
+Peli loppuu siihen, kun kaikki kohdat on saatu täytettyä pisteillä tai rukseilla. Lopulliset pisteet näkyvät viimeisessä sarakkeessa. Peli ei korosta kuka on voittanut pelin, mutta korkeimmat pisteet kerännyt pelaaja voittaa. Peli jää hetkeksi aikaa paikoilleen, jotta voidaan nähdä kuka on voittanut.
 
 ![image](https://github.com/alumppio/ot-harjoitustyo/assets/98692578/27980852-3976-41e8-aa33-0c1403ed0575)
 
-Tämän jälkeen peli on lopunnut, mutta lopuksi vielä näytetään tietokannan korkeimmat pisteet.
+Tämän jälkeen peli on lopunnut, mutta lopuksi vielä näytetään tietokannan korkeimmat pisteet. Peli jälleen jää paikoilleen hetkeksi aikaa, jotta voidaan nähdä kuka on saanut korkeimmat pisteet.
 ![image](https://github.com/alumppio/ot-harjoitustyo/assets/98692578/ba29071a-5056-4ca7-b41a-2f0aed17766b)
 
