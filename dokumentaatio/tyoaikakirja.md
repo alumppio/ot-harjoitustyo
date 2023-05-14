@@ -74,4 +74,8 @@ Testausta edistetty huomattavasti.
 
 ## 11.5 
 
+2200-2400: siistitty koodia päivitetty docstringejä.
 
+## 14.5
+
+1900-2300: korjattu pelin kaatava virhe, päivitetty docstringejä, luotu testausdokumentti.
