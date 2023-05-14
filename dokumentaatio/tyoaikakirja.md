@@ -1,4 +1,4 @@
-# Käytetyt tunnit yhteensä: noin 36 tuntia
+# Käytetyt tunnit yhteensä: noin 42 tuntia
 
 ## 28.3: 
 20-30min, tein alustavan vaatimusmäärittelyn ja mietin projektin aihetta
