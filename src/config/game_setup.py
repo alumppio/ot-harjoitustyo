@@ -22,7 +22,7 @@ class Setup:
     def name_setup_loop(self, player, player_number):
         '''A method that is used to set a certain players name in the Player-class
 
-        
+
         Args:
             player (Player) : yatzy sheet Player-class object 
             player_number (int) : player number in the Setup-class self.players list
@@ -50,7 +50,7 @@ class Setup:
                 if event.key == pygame.K_BACKSPACE and 0 < len(self.players_amount):
                     self.players_amount = self.players_amount[:-1]
                 elif event.key == pygame.K_RETURN and 0 < len(self.players_amount) \
-                    and 0<int(self.players_amount)<7:
+                        and 0 < int(self.players_amount) < 7:
                     self.players_amount = self.players_amount
                     self.running = False
                 elif 0 <= len(self.players_amount) < 1:
@@ -127,7 +127,7 @@ class Setup:
     def draw_name_setup(self, name, player_number):
         '''
         Method that draws everything related to typing your name
-        
+
         Args:
             name (string) : typed name
             player_number (int) : player number in the yatzy sheet    

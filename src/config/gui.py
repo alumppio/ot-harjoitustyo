@@ -20,7 +20,7 @@ class EventHandler:
 
     def select_dice(self, dice_number):
         """Method to select the dice and draw them on to the yatzy paper
-        
+
         Args:
             dice_number (int) : the dice that the player wants to select
         """
@@ -29,16 +29,16 @@ class EventHandler:
 
     def unselect_dice(self):
         """Method to unselect the dice"""
-        
+
         self.dice_drawer.draw_unselect_dice()
         self.dices_to_hold = []
 
     def hold_dice(self, event):
         """Check if dices were selected
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
-            
+
         """
         if event.type == pygame.MOUSEBUTTONDOWN and DICE_Y <= event.pos[1] <= DICE_Y+DICE_A:
             if DICE_X <= event.pos[0] <= DICE_X+DICE_A:
@@ -54,7 +54,7 @@ class EventHandler:
 
     def undo_hold_dice(self, event):
         """Check if user changed his/her mind
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
         """
@@ -64,7 +64,7 @@ class EventHandler:
 
     def roll_dice(self, event):
         """Check if the dice roller was clicked
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
         """
@@ -79,12 +79,12 @@ class EventHandler:
         '''Method that checks if any of the upper part frames were clicked. If some were
         clicked it also sets the points in the Player class and draws the points on to 
         the screen
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
         '''
         if event.type == pygame.MOUSEBUTTONDOWN and 122 + 76*self.player_number \
-            <= event.pos[0] <= 198 + 76*self.player_number:
+                <= event.pos[0] <= 198 + 76*self.player_number:
             if 169 <= event.pos[1] <= 192:
                 if self.yatzy_sheet.set_upper_part(1, self.dices, self.player, self.player_number):
                     self.next_turn()
@@ -108,7 +108,7 @@ class EventHandler:
         '''Method to check if the pair frame was clicked. If the frame was clicked
         the method sets the points in the Player class and draws the points on 
         to the screen
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
         '''
@@ -122,7 +122,7 @@ class EventHandler:
         '''Method to check if the two pair frame was clicked. If the frame was 
         clicked the method sets the points in the Player class and draws the 
         points on to the screen
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
         '''
@@ -136,7 +136,7 @@ class EventHandler:
         '''Method to check if the 3 of a kind frame was clicked. If it was clicked
         the method sets the points in the Player class and draws the points on 
         to the screen
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
         '''
@@ -150,7 +150,7 @@ class EventHandler:
         '''Method to check if the 4 of a kind frame was clicked. If it was clicked
         the method sets the points in the Player class and draws the points on 
         to the screen
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
         '''
@@ -164,7 +164,7 @@ class EventHandler:
         '''This method checks if the small straight frame was clicked. If it 
         was clicked the method sets the points in the Player class and draws 
         the points on to the screen
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
         '''
@@ -178,7 +178,7 @@ class EventHandler:
         '''This method checks if the large straight frame was clicked. If it 
         was clicked the method sets the points in the Player class and draws 
         the points on to the screen
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
 
@@ -193,7 +193,7 @@ class EventHandler:
         '''This method checks if the full house frame was clicked. If it 
         was clicked the method sets the points in the Player class and draws 
         the points on to the screen
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
 
@@ -208,7 +208,7 @@ class EventHandler:
         '''This method checks if the chance frame was clicked. If it was 
         clicked the method sets the points in the Player class and draws 
         the points on to the screen
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
 
@@ -223,7 +223,7 @@ class EventHandler:
         '''This method checks if the yatzy frame was clicked. If it was 
         clicked the method sets the points in the Player class and draws 
         the points on to the screen
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
 
@@ -239,7 +239,7 @@ class EventHandler:
         meaning everything after ones, ... , sixes using method defined 
         earlier. If any of the lower part frames were the points were set
         in the Player class and points would be drawn to the sreen 
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
 
@@ -257,7 +257,7 @@ class EventHandler:
     def set_total(self):
         '''Checks if either of the total points were ready to calculated.
         If they were ready summed points would be drawn to the screen
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
 
@@ -271,7 +271,7 @@ class EventHandler:
     def next_turn(self):
         '''Method to change the turn as in rolling the dice and resetting
         the dice roll count
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
 
@@ -286,7 +286,7 @@ class EventHandler:
 
     def quit(self, event):
         """Method to quit the game
-        
+
         Args:
             event (pygame.event.Event) : user caused events that have occured in the game 
         """

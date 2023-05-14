@@ -28,7 +28,7 @@ class Player:
     def set_upper_part(self, dices: Dices, number: int):
         '''Method that sets the upper part meaning the values of keys 
         1 to 6 in the minutes dictionary
-        
+
         Args:
             dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
             number (int) : number that the player wants to set in the yatzy sheet
@@ -68,7 +68,7 @@ class Player:
     def set_two_pair(self, dices: Dices):
         '''Method that sets the value of the two pair key in the 
         minutes dictionary
-        
+
         Args:
             dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices        
         '''
@@ -87,7 +87,7 @@ class Player:
     def set_3_of_a_kind(self, dices: Dices):
         '''Method that sets the value of the 3 of a kind key 
         in the minutes dictionary
-        
+
         Args:
             dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
         '''
@@ -106,7 +106,7 @@ class Player:
     def set_4_of_a_kind(self, dices: Dices):
         '''Method that sets the value of the 4 of a kind key 
         in the minutes dictionary
-        
+
         Args:
             dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
 
@@ -125,7 +125,7 @@ class Player:
     def set_full_house(self, dices: Dices):
         '''Method that sets the value of the full house key 
         in the minutes dictionary
-        
+
         Args:
             dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
 
@@ -140,7 +140,7 @@ class Player:
     def set_small_straight(self, dices: Dices):
         '''Method that sets the value of the small straight key 
         in the minutes dictionary
-        
+
         Args:
             dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
 
@@ -154,7 +154,7 @@ class Player:
     def set_large_straight(self, dices: Dices):
         '''Method that sets the value of the large straight key 
         in the minutes dictionary
-        
+
         Args:
             dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
 
@@ -168,7 +168,7 @@ class Player:
     def set_yatzy(self, dices: Dices):
         '''Method that sets the value of the yatzy key in the 
         minutes dictionary
-        
+
         Args:
             dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
 
@@ -181,7 +181,7 @@ class Player:
     def set_chance(self, dices: Dices):
         '''Method that sets the value of the chance key in the 
         minutes dictionary
-        
+
         Args:
             dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
 

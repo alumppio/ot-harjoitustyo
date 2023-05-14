@@ -10,7 +10,7 @@ class EndGame:
     def __init__(self, players):
         '''
         Class to handle the ending of the game. 
-        
+
         Args:
             players (list) : list of Player-class objects
         '''
@@ -20,12 +20,13 @@ class EndGame:
         '''
         Method to set the high scores of the players in the database
         '''
-        
+
         for player in self.players:
             try:
                 CONNECTION.execute(
                     """insert into High_Scores (name, score) values (?, ?)""",
-                    (player.player.minutes['Name'], player.player.total_points())
+                    (player.player.minutes['Name'],
+                     player.player.total_points())
                 )
                 CONNECTION.commit()
             except OperationalError:
@@ -36,7 +37,7 @@ class EndGame:
         '''
         Method to draw the high scores on to the screen
         '''
-        
+
         drawer = DrawEndGame()
         drawer.draw_high_scores()
 
@@ -44,7 +45,7 @@ class EndGame:
         '''
         Main method to handle the ending of the game. Uses the classes other methods.
         '''
-        
+
         self.set_high_scores()
         self.show_high_scores()
         Delay(30000)

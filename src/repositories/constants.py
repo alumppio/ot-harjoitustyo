@@ -30,8 +30,8 @@ END_FONT = pygame.font.SysFont('arial', 28)
 TIP_FONT = pygame.font.SysFont('arial', 17)
 
 START_TIP_AMOUNT = TIP_FONT.render(
-    '(Type with keyboard how many players will play from 1 to 6. Press [enter] to continue)'
-    , True, GRAY, WHITE)
+    '(Type with keyboard how many players will play from 1 to 6. Press [enter] to continue)',
+     True, GRAY, WHITE)
 START_TIP_NAMES = TIP_FONT.render(
     '(Type your name using the keyboard. Press [enter] to continue)', True, GRAY, WHITE)
 START_TEXT_PLAYERS = START_FONT.render(
@@ -41,7 +41,8 @@ START_TEXT_NAME = START_FONT.render(
 END_TEXT = START_FONT.render(
     'High Scores (Top 5 points):', True, RED, WHITE)
 END_TIP = TIP_FONT.render(
-'The game will close shortly. Displaying top 5 scores (if there is that many)', True, GRAY, WHITE
+    'The game will close shortly. Displaying top 5 scores (if there is that many)',
+     True, GRAY, WHITE
 )
 
 DIRNAME = os.path.dirname(__file__)

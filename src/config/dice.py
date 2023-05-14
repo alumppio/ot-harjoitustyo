@@ -6,14 +6,14 @@ class Dices:
         ''' 
         Class that resembles the dices in Yatzy. 5 random integers between 1-6 in a list.
         '''
-        
+
         self.dice = [random.randint(1, 6) for i in range(5)]
         self.roll_amount = 1
 
     def roll_dice(self, dices_to_hold):
         '''
         Method to roll the dice.
-        
+
         Args:
             dices_to_hold (list) : what dices to hold when rolling.
         '''
