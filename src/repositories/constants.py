@@ -2,6 +2,7 @@ import os
 import pygame
 
 pygame.init()
+pygame.display.set_caption('Yatzy')
 
 ## This file consists of constants used in the game ## 
 
@@ -29,9 +30,10 @@ END_FONT = pygame.font.SysFont('arial', 28)
 TIP_FONT = pygame.font.SysFont('arial', 17)
 
 START_TIP_AMOUNT = TIP_FONT.render(
-    '(Type with keyboard how many players will play from 1 to 6)', True, GRAY, WHITE)
+    '(Type with keyboard how many players will play from 1 to 6. Press [enter] to continue)'
+    , True, GRAY, WHITE)
 START_TIP_NAMES = TIP_FONT.render(
-    '(Type your name using the keyboard)', True, GRAY, WHITE)
+    '(Type your name using the keyboard. Press [enter] to continue)', True, GRAY, WHITE)
 START_TEXT_PLAYERS = START_FONT.render(
     'How many players (Max 6):', True, BLACK, WHITE)
 START_TEXT_NAME = START_FONT.render(

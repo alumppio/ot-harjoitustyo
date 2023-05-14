@@ -4,6 +4,7 @@ from config.visual.draw_end_game import DrawEndGame
 from repositories.delay_time import Delay
 
 
+
 class EndGame:
     def __init__(self, players):
         self.players = players
