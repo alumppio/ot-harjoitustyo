@@ -20,6 +20,14 @@ Mikäli jatsia haluaa pelata tarvitsee kuitenkin viisi noppaa. Mikäli noppia ei
 - Lopputulokset kirjataan tulostaulukkoon, josta näkee kaikkien vanhojen pelien tulokset.  
 
 
+## Ensimmäisen version tarjoamat toiminnallisuudet
+
+- Yksi tai useampi (max 6) voi pelata graafisessa käyttöliittymässä, joka on jatsipelipaperin mukainen
+- Oman joukkueen tai itsensä voi nimetä
+- Noppia voi lukita ja heittää uudestaan hiiren painauksilla
+- Haluttu tulos asetataan pelipaperiin oikeaa kohtaa klikkaamalla
+- Pelin lopputulokset kirjataan tietokantaan ja tietokannan 5 korkeinta pistettä näytetään pelin lopussa
+
 ## Jatkokehitysideoita
 
 - Lisätään kerran pelin aikana käytettävissä oleva mahdollinen tilannevinkki, joka laskee todennäköisyyksien mukaan parhaimman peliliikkeen.
