@@ -1,9 +1,9 @@
 import sys
+from sqlite3 import OperationalError
 import pygame
 from services.connection import CONNECTION
 from config.visual.draw_end_game import DrawEndGame
 from repositories.delay_time import Delay
-
 
 
 class EndGame:
@@ -18,10 +18,9 @@ class EndGame:
                     (player.player.minutes['Name'], player.player.total_points())
                 )
                 CONNECTION.commit()
-            except:
-                print('DATABASE NOT BUILT!!!')
+            except OperationalError:
+                print('DATABASE NOT BUILT!!! THE GAME CLOSED.')
                 sys.exit()
-
 
     def show_high_scores(self):
         drawer = DrawEndGame()

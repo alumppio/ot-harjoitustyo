@@ -1,4 +1,5 @@
 import sys
+from sqlite3 import OperationalError
 import pygame
 from services.connection import CONNECTION
 from repositories.constants import SCREEN, END_FONT, END_TEXT, BLACK, WHITE, END_TIP
@@ -10,8 +11,8 @@ class DrawEndGame:
             self.scores = CONNECTION.execute("""
         SELECT name, score FROM High_Scores ORDER BY score DESC;
         """)
-        except:
-            print('DATABASE NOT BUILT!!!')
+        except OperationalError:
+            print('DATABASE NOT BUILT!!! THE GAME CLOSED.')
             sys.exit()
 
         self.count = 1

@@ -4,7 +4,7 @@ import pygame
 pygame.init()
 pygame.display.set_caption('Yatzy')
 
-## This file consists of constants used in the game ## 
+## This file consists of constants used in the game ##
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
