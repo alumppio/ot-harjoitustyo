@@ -1,3 +1,4 @@
+import sys
 import pygame
 from services.connection import CONNECTION
 from repositories.constants import SCREEN, END_FONT, END_TEXT, BLACK, WHITE, END_TIP
@@ -5,9 +6,14 @@ from repositories.constants import SCREEN, END_FONT, END_TEXT, BLACK, WHITE, END
 
 class DrawEndGame:
     def __init__(self):
-        self.scores = CONNECTION.execute("""
+        try:
+            self.scores = CONNECTION.execute("""
         SELECT name, score FROM High_Scores ORDER BY score DESC;
         """)
+        except:
+            print('DATABASE NOT BUILT!!!')
+            sys.exit()
+
         self.count = 1
         SCREEN.fill(WHITE)
         SCREEN.blit(END_TEXT, pygame.Rect(50, 30, 20, 30))

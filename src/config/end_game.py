@@ -1,3 +1,4 @@
+import sys
 import pygame
 from services.connection import CONNECTION
 from config.visual.draw_end_game import DrawEndGame
@@ -11,11 +12,16 @@ class EndGame:
 
     def set_high_scores(self):
         for player in self.players:
-            CONNECTION.execute(
-                """insert into High_Scores (name, score) values (?, ?)""",
-                (player.player.minutes['Name'], player.player.total_points())
-            )
-            CONNECTION.commit()
+            try:
+                CONNECTION.execute(
+                    """insert into High_Scores (name, score) values (?, ?)""",
+                    (player.player.minutes['Name'], player.player.total_points())
+                )
+                CONNECTION.commit()
+            except:
+                print('DATABASE NOT BUILT!!!')
+                sys.exit()
+
 
     def show_high_scores(self):
         drawer = DrawEndGame()

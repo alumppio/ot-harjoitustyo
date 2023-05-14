@@ -24,7 +24,7 @@ class MainLoop:
             for player in self.players:
                 self.event_handle_loop(player)
             self.check_if_done()
-        Delay(25000)
+        Delay(20000)
 
     def draw_names(self):
         for player in self.players:
