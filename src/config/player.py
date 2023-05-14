@@ -105,7 +105,12 @@ class Player:
 
     def set_4_of_a_kind(self, dices: Dices):
         '''Method that sets the value of the 4 of a kind key 
-        in the minutes dictionary'''
+        in the minutes dictionary
+        
+        Args:
+            dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
+
+        '''
         if self.minutes["Four of a Kind"] is None:
             number_to_set = [number for number in dices.dice
                              if dices.dice.count(number) > 3]
@@ -119,7 +124,12 @@ class Player:
 
     def set_full_house(self, dices: Dices):
         '''Method that sets the value of the full house key 
-        in the minutes dictionary'''
+        in the minutes dictionary
+        
+        Args:
+            dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
+
+        '''
         if self.minutes["Full House"] is None and len(set(dices.dice)) == 2:
             self.minutes["Full House"] = sum(dices.dice)
 
@@ -129,7 +139,12 @@ class Player:
 
     def set_small_straight(self, dices: Dices):
         '''Method that sets the value of the small straight key 
-        in the minutes dictionary'''
+        in the minutes dictionary
+        
+        Args:
+            dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
+
+        '''
         if self.minutes["Small Straight"] is None and len(set(
                 dices.dice)) == 5 and sum(dices.dice) == 15:
             self.minutes["Small Straight"] = 15
@@ -138,7 +153,12 @@ class Player:
 
     def set_large_straight(self, dices: Dices):
         '''Method that sets the value of the large straight key 
-        in the minutes dictionary'''
+        in the minutes dictionary
+        
+        Args:
+            dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
+
+        '''
         if self.minutes["Large Straight"] is None and len(set(
                 dices.dice)) == 5 and sum(dices.dice) == 20:
             self.minutes["Large Straight"] = 20
@@ -147,7 +167,12 @@ class Player:
 
     def set_yatzy(self, dices: Dices):
         '''Method that sets the value of the yatzy key in the 
-        minutes dictionary'''
+        minutes dictionary
+        
+        Args:
+            dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
+
+        '''
         if self.minutes["Yatzy"] is None and len(set(dices.dice)) == 1:
             self.minutes["Yatzy"] = 50
         else:
@@ -155,7 +180,12 @@ class Player:
 
     def set_chance(self, dices: Dices):
         '''Method that sets the value of the chance key in the 
-        minutes dictionary'''
+        minutes dictionary
+        
+        Args:
+            dices (Dices) : 5 random integers between 1-6 in a list replicating real life dices
+
+        '''
         if self.minutes["Chance"] is None:
             self.minutes["Chance"] = sum(dices.dice)
         else:
