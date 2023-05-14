@@ -12,6 +12,7 @@ Jatsi on noppapeli, jota voi pelata kahdestaan tai suuremassa ryhmässä. Peliss
 - [Changelog](dokumentaatio/changelog.md)
 - [Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.md)
 - [Käyttöohje](dokumentaatio/kayttoohje.md)
+- [Testausdokumentti](dokumentaatio/testausdokumentti.md)
 
 # Komentorivitoiminnot 
 
