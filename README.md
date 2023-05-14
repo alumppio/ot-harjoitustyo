@@ -4,6 +4,8 @@ Jatsi on noppapeli, jota voi pelata kahdestaan tai suuremassa ryhmässä. Peliss
 
 - [Release 1](https://github.com/alumppio/ot-harjoitustyo/releases/tag/viikko5)
 - [Release 2](https://github.com/alumppio/ot-harjoitustyo/releases/tag/viikko6)
+- [Loppupalautus](https://github.com/alumppio/ot-harjoitustyo/releases/tag/viikko7)
+
 
 # Dokumentaatio
 
