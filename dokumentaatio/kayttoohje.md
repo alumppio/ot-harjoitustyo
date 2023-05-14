@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa jatsipelin viimeisin [release](https://github.com/alumppio/ot-harjoitustyo/releases) ja pura paketti.
+Lataa jatsipelin viimeisin [release](https://github.com/alumppio/ot-harjoitustyo/releases) ja pura paketti. Pelin pisteet lasketaan [jatsipelin sääntöjen](https://fi.wikipedia.org/wiki/Yatzy#P%C3%B6yt%C3%A4kirja) mukaisesti
 
 ## Ohjelman käynnistys
 Ennen käynnistämistä täytyy poetry alustaa
@@ -20,18 +20,26 @@ poetry run invoke start
 
 ## Pelaaminen
 
-Aluksi jatsipelissä valitaan pelaajalle oma nimi kirjoittamalla näppäimistöllä haluama merkkiyhdistelmä (max 8. merkkiä). Painamalla enter lukiset nimen ja voit aloittaa jatsipelin pelaamisen.
+Kun peli käynnistetään, niin peli kysyy kuinka monta pelaajaa pelaa. Tässä valinta tehdään kirjoittamalla haluama pelaajamäärä ja painetaan enter jatkaakseen. Askelpalauttimella voi kumittaa halutun määrän ja valita uudestaan.
+![image](https://github.com/alumppio/ot-harjoitustyo/assets/98692578/13422da1-6689-416d-a261-2dead0c25692)
 
-![image](https://user-images.githubusercontent.com/98692578/235775875-9d716002-9347-497b-b3d7-349ba30ed464.png)
+Tämän jälkeen valitaan pelaajien nimet. Nimet valitaan kirjoittamalla nimi näppäimistöllä ja painamalla enter. Askelpalauttimella voi kumittaa vääriä merkkejä.
 
-Peliä pelataan hiiren klikkausten avulla. Mikäli klikkaa jatsipaperin kohtia asettaa pisteen, asettaa kohtaan pisteen tai ruksaa sen yli, jos tähän ei voi asettaa mitään. 
+![image](https://github.com/alumppio/ot-harjoitustyo/assets/98692578/bc5aae6e-df5b-4792-b839-a2812e9ca313)
 
-![image](https://user-images.githubusercontent.com/98692578/235776423-7d9065d6-e048-40ed-a4ef-cb0a8585bea3.png)
+Peliä pelataan hiiren klikkausten avulla. Mikäli klikkaa jatsipaperin kohtia asettaa pisteen, asettaa kohtaan pisteen tai ruksaa sen yli, jos tähän ei voi asettaa mitään. Punaisella nuolella nähdään kenen pelaajan vuoro on käynnissä.
+
+![image](https://github.com/alumppio/ot-harjoitustyo/assets/98692578/a5f1be44-9655-4ec0-955a-f9297707742b)
+
 
 Noppia voi heittää kaksi kertaa uudestaan ja halutessaan osia nopista voi pitää samana klikkaamalla niitä
 
-![image](https://user-images.githubusercontent.com/98692578/235776647-2e3c3a8b-3bc9-4244-8027-bba175cf0671.png)
+![image](https://github.com/alumppio/ot-harjoitustyo/assets/98692578/a1b03ac7-65b4-4db5-b22f-604e3e4ef43d)
 
-Peli loppuu siihen, kun kaikki kohdat on saatu täytettyä pisteillä tai rukseilla. Lopulliset pisteet näkyvät viimeisessä sarakkeessa. Peli itsessään ei lopu sillä pelin teko on vielä vaiheessa, joten jos pelin haluaa sulkea täytyy painaa ikkunan raksia.
+Peli loppuu siihen, kun kaikki kohdat on saatu täytettyä pisteillä tai rukseilla. Lopulliset pisteet näkyvät viimeisessä sarakkeessa. Peli ei korosta kuka on voittanut pelin, mutta korkeimmat pisteet kerännyt pelaaja voittaa. 
 
-![image](https://user-images.githubusercontent.com/98692578/235777274-a0c1105d-cacd-4730-95e5-c29c17172da0.png)
+![image](https://github.com/alumppio/ot-harjoitustyo/assets/98692578/27980852-3976-41e8-aa33-0c1403ed0575)
+
+Tämän jälkeen peli on lopunnut, mutta lopuksi vielä näytetään tietokannan korkeimmat pisteet.
+![image](https://github.com/alumppio/ot-harjoitustyo/assets/98692578/ba29071a-5056-4ca7-b41a-2f0aed17766b)
+
